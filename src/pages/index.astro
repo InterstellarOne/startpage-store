@@ -1,44 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import '../styles/tile.css';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/tile.css";
 
-import firefoxIcon from '../assets/firefoxbrowser.svg';
-import chromeIcon from '../assets/chromewebstore.svg';
-import githubIcon from '../assets/github.svg';
-import websiteIcon from '../assets/website.svg';
+import firefoxIcon from "../assets/firefoxbrowser.svg";
+import chromeIcon from "../assets/chromewebstore.svg";
+import githubIcon from "../assets/github.svg";
+import websiteIcon from "../assets/website.svg";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <div class="container">
-      <div class="overlay">
-        <div class="tile-info">
-          <div class="title-icons">
-            <div class="title">
-              <div class="title-flexbox">
-                <svg width="80" height="0"></svg>
-                <h1 id="title" class="ubuntu-medium">Casca New Tab</h1>
-              </div>
-            </div>
-			<div class="icon-wrapper">
-          <button type="button" class="icon-link" id="firefox">
-            <img src={firefoxIcon.src} width="42" height="42" />
-          </button>
-          <button type="button" class="icon-link" id="chrome">
-            <img src={chromeIcon.src} width="42" height="42" />
-          </button>
-          <button type="button" class="icon-link" id="github">
-            <img src={githubIcon.src} width="42" height="42" />
-          </button>
-          <button type="button" class="icon-link" id="website">
-            <img src={websiteIcon.src} width="42" height="42" />
-          </button>
-			</div>
+  <div class="overlay">
+    <div class="tile-info">
+      <div class="title-icons">
+        <div class="title">
+          <div class="panel title-flexbox">
+            <svg width="80" height="0"></svg>
+            <h1 id="title" class="ubuntu-medium">Casca New Tab</h1>
           </div>
         </div>
-        <div class="bg-image">
-          <img src="https://files.catbox.moe/xxxzyq.jpg" />
+        <div class="icon-wrapper">
+          <button type="button" class="icon-link panel" id="firefox">
+            <img src={firefoxIcon.src} width="42" height="42" />
+          </button>
+          <button type="button" class="icon-link panel" id="chrome">
+            <img src={chromeIcon.src} width="42" height="42" />
+          </button>
+          <button type="button" class="icon-link panel" id="github">
+            <img src={githubIcon.src} width="42" height="42" />
+          </button>
+          <button type="button" class="icon-link panel" id="website">
+            <img src={websiteIcon.src} width="50" height="50" />
+          </button>
         </div>
       </div>
+
+      <div class="panel description-flexbox">
+        <p class="description-txt" class="ubuntu-regular">
+          Casca is a new tab page that is designed to be simple, fast, and
+          customizable. It is built with web technologies and is open source.
+        </p>
+      </div>
+      <div class="bg-image">
+        <img src="https://files.catbox.moe/xxxzyq.jpg" />
+      </div>
     </div>
+  </div>
+</div>
