@@ -32,15 +32,35 @@
 }
 
 .card {
-  max-width: 600px;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.icon-links {
+  display: flex;
+  justify-content: center;
+  bottom: 10px;
+  margin-top: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+}
+
+.image-card-container {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  display: flex;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 .image-tile {
-  width: 100%;
+  width: calc(100% - 10px);
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 10px;
+  margin: 5px;
 }
 
 .card-description {
@@ -55,3 +75,18 @@
   margin: 15px;
 }
 
+.icon-link {
+  display: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+}
+
+.icon-link img {
+  width: 28px;
+  height: 28px;
+}

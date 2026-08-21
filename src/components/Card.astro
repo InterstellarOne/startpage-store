@@ -5,6 +5,7 @@ import chromeIcon from "../assets/chromewebstore.svg";
 import githubIcon from "../assets/github.svg";
 import websiteIcon from "../assets/website.svg";
 import "../styles/card.css";
+import "../styles/index.css";
 
 interface Props {
   title: string;
@@ -34,45 +35,52 @@ const {
 ---
 
 <div class="card">
-  <div class="image-card-container">
-    {/*create a button for each link present*/}
+  <div
+    class="image-card-container"
+    style={`background-image: url(${image.src});`}
+  >
+    <div class="icon-links">
+      {/*create a button for each link present*/}
+      {
+        firefoxLink && (
+          <button type="button" class="icon-link firefox">
+            <a href={firefoxLink} target="_blank" rel="noopener noreferrer">
+              <img src={firefoxIcon.src} />
+            </a>
+          </button>
+        )
+      }
+      {
+        chromeLink && (
+          <button type="button" class="icon-link chrome">
+            <a href={chromeLink} target="_blank" rel="noopener noreferrer">
+              <img src={chromeIcon.src} />
+            </a>
+          </button>
+        )
+      }
+      {
+        gitLink && (
+          <button type="button" class="icon-link github">
+            <a href={gitLink} target="_blank" rel="noopener noreferrer">
+              <img src={githubIcon.src} />
+            </a>
+          </button>
+        )
+      }
+      {
+        websiteLink && (
+          <button type="button" class="icon-link website">
+            <a href={websiteLink} target="_blank" rel="noopener noreferrer">
+              <img src={websiteIcon.src} />
+            </a>
+          </button>
+        )
+      }
+    </div>
     {
-      firefoxLink && (
-        <button type="button" class="icon-link firefox">
-          <a href={firefoxLink} target="_blank" rel="noopener noreferrer">
-            <img src={firefoxIcon.src} width="42" height="42" />
-          </a>
-        </button>
-      )
+      //<img src={image.src} alt={`Screenshot of ${title}`} class="image-tile" />}
     }
-    {
-      chromeLink && (
-        <button type="button" class="icon-link chrome">
-          <a href={chromeLink} target="_blank" rel="noopener noreferrer">
-            <img src={chromeIcon.src} width="42" height="42" />
-          </a>
-        </button>
-      )
-    }
-    {
-      gitLink && (
-        <button type="button" class="icon-link github">
-          <a href={gitLink} target="_blank" rel="noopener noreferrer">
-            <img src={githubIcon.src} width="42" height="42" />
-          </a>
-        </button>
-      )
-    }
-    {
-      websiteLink && (
-        <button type="button" class="icon-link website">
-          <a href={websiteLink} target="_blank" rel="noopener noreferrer">
-            <img src={websiteIcon.src} width="42" height="42" />
-          </a>
-        </button>
-      )
-    }
-    <img src={image.src} alt={`Screenshot of ${title}`} class="image-tile" />
   </div>
   <div class="desc-wrapper">
     <h3 class="ubuntu-bold card-title">{title}</h3>
