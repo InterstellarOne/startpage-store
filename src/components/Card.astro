@@ -1,0 +1,92 @@
+---
+// src/components/Card.astro
+import firefoxIcon from "../assets/firefoxbrowser.svg";
+import chromeIcon from "../assets/chromewebstore.svg";
+import githubIcon from "../assets/github.svg";
+import websiteIcon from "../assets/website.svg";
+import "../styles/card.css";
+
+interface Props {
+  title: string;
+  description: string;
+  firefoxLink?: string;
+  chromeLink?: string;
+  gitLink?: string;
+  websiteLink?: string;
+  dateUpdated: number;
+  image: {
+    src: string;
+  };
+  tags: string[];
+}
+
+const {
+  title,
+  description,
+  firefoxLink,
+  chromeLink,
+  gitLink,
+  websiteLink,
+  dateUpdated,
+  image,
+  tags,
+} = Astro.props;
+---
+
+<div class="card">
+  <div class="image-card-container">
+    {/*create a button for each link present*/}
+    {
+      firefoxLink && (
+        <button type="button" class="icon-link firefox">
+          <a href={firefoxLink} target="_blank" rel="noopener noreferrer">
+            <img src={firefoxIcon.src} width="42" height="42" />
+          </a>
+        </button>
+      )
+    }
+    {
+      chromeLink && (
+        <button type="button" class="icon-link chrome">
+          <a href={chromeLink} target="_blank" rel="noopener noreferrer">
+            <img src={chromeIcon.src} width="42" height="42" />
+          </a>
+        </button>
+      )
+    }
+    {
+      gitLink && (
+        <button type="button" class="icon-link github">
+          <a href={gitLink} target="_blank" rel="noopener noreferrer">
+            <img src={githubIcon.src} width="42" height="42" />
+          </a>
+        </button>
+      )
+    }
+    {
+      websiteLink && (
+        <button type="button" class="icon-link website">
+          <a href={websiteLink} target="_blank" rel="noopener noreferrer">
+            <img src={websiteIcon.src} width="42" height="42" />
+          </a>
+        </button>
+      )
+    }
+    <img src={image.src} alt={`Screenshot of ${title}`} class="image-tile" />
+  </div>
+  <h3 class="card-title">{title}</h3>
+  <p class="card-description">{description}</p>
+  {/*map tags array and create a p for each tag*/}
+  <div class="card-tags">
+    {tags.map((tag) => <span class="tag">{tag}</span>)}
+    <h4 class="date-updated">
+      Date Updated: {
+        new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })
+      }
+    </h4>
+  </div>
+</div>

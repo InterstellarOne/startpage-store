@@ -13,13 +13,14 @@
 
   .ubuntu-regular {
     font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
+    font-size: 20px;
   }
 
   .ubuntu-medium {
     font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     font-size: 26px;
   }
@@ -29,6 +30,18 @@
     font-weight: 700;
     font-style: normal;
   }
+}
+
+.card {
+  max-width: 600px;
+}
+
+.image-tile {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .container .bg-image img {
@@ -42,7 +55,10 @@
 }
 
 .container {
-  aspect-ratio: 16, 9;
+    width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+   position: relative; 
 }
 
 .title {
@@ -56,18 +72,20 @@
   padding-right: 20px;
   border-radius: 20px;
   height: 70px;
-  
+
 }
 
 .description-flexbox {
   width: fit-content;
-  max-width: 50%;
+  max-width: 80%;
 height: fit-content;
 inline-size: fit-content;
 block-size: fit-content;
 border-radius: 20px;
 padding-left: 50px;
-transform: translateX(-20px);
+transform: translateX(-25px);
+padding-right: 20px;
+margin-top: 20px;
 }
 
 .title-icons {
@@ -89,6 +107,16 @@ transform: translateX(-20px);
   border-radius: 50%;
   margin-right: 10px;
   border: none;
+}
+
+.dock {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  
+  width: 90%
 }
 
 .panel {
