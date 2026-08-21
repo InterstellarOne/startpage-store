@@ -74,19 +74,20 @@ const {
     }
     <img src={image.src} alt={`Screenshot of ${title}`} class="image-tile" />
   </div>
-  <h3 class="card-title">{title}</h3>
-  <p class="card-description">{description}</p>
-  {/*map tags array and create a p for each tag*/}
-  <div class="card-tags">
-    {tags.map((tag) => <span class="tag">{tag}</span>)}
-    <h4 class="date-updated">
-      Date Updated: {
-        new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })
-      }
-    </h4>
+  <div class="desc-wrapper">
+    <h3 class="ubuntu-bold card-title">{title}</h3>
+    <p class="ubuntu-regular card-description">{description}</p>
+    <div class="ubuntu-light card-tags">
+      {tags.map((tag) => <span class="tag">{tag}</span>)}
+      <h4 class="date-updated">
+        Date Updated: {
+          new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })
+        }
+      </h4>
+    </div>
   </div>
 </div>

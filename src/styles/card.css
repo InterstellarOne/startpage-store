@@ -13,9 +13,8 @@
 
   .ubuntu-regular {
     font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
-    font-size: 20px;
   }
 
   .ubuntu-medium {
@@ -44,86 +43,15 @@
   border-radius: 10px;
 }
 
-.container .bg-image img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  aspect-ratio: 16, 9;
-}
-
-.container {
-    width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-   position: relative; 
-}
-
-.title {
-  position: relative;
-  left: -60px;
-  display: flex;
-}
-
-.title-flexbox {
-  display: flex;
-  padding-right: 20px;
-  border-radius: 20px;
-  height: 70px;
-
-}
-
-.description-flexbox {
-  width: fit-content;
-  max-width: 80%;
-height: fit-content;
-inline-size: fit-content;
-block-size: fit-content;
-border-radius: 20px;
-padding-left: 50px;
-transform: translateX(-25px);
-padding-right: 20px;
-margin-top: 20px;
-}
-
-.title-icons {
-  display: flex;
-  padding-left: 5px;
-}
-
-.icon-wrapper {
-  display: flex;
-  margin-left:-40px;
-}
-
-.icon-link {
-  display: flex;
-  align-items: center;
+.card-description {
   justify-content: center;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: none;
+  text-align: justify;
+  font-size: 18px;
+  color: #343434;
 }
 
-.dock {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  align-items: center;
-  
-  width: 90%
+.desc-wrapper {
+  width: calc(100% - 30px);
+  margin: 15px;
 }
 
-.panel {
-    /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.65);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.8px);
-  -webkit-backdrop-filter: blur(5.8px);
-  border: 2px solid rgba(255, 255, 255, 0.247);
-}
