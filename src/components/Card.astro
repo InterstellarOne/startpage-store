@@ -43,38 +43,54 @@ const {
       {/*create a button for each link present*/}
       {
         firefoxLink && (
-          <button type="button" class="icon-link firefox">
-            <a href={firefoxLink} target="_blank" rel="noopener noreferrer">
-              <img src={firefoxIcon.src} />
-            </a>
-          </button>
+          <a
+            href={firefoxLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link firefox"
+            aria-label="Download extension for Firefox-based browsers"
+          >
+            <img src={firefoxIcon.src} alt="" aria-hidden="true" />
+          </a>
         )
       }
       {
         chromeLink && (
-          <button type="button" class="icon-link chrome">
-            <a href={chromeLink} target="_blank" rel="noopener noreferrer">
-              <img src={chromeIcon.src} />
-            </a>
-          </button>
+          <a
+            href={chromeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link chrome"
+            aria-label="Download extension for Chromium-based browsers"
+          >
+            <img src={chromeIcon.src} alt="" aria-hidden="true" />
+          </a>
         )
       }
       {
         gitLink && (
-          <button type="button" class="icon-link github">
-            <a href={gitLink} target="_blank" rel="noopener noreferrer">
-              <img src={githubIcon.src} />
-            </a>
-          </button>
+          <a
+            href={gitLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link git"
+            aria-label="View source code or installation instructions"
+          >
+            <img src={githubIcon.src} alt="" aria-hidden="true" />
+          </a>
         )
       }
       {
         websiteLink && (
-          <button type="button" class="icon-link website">
-            <a href={websiteLink} target="_blank" rel="noopener noreferrer">
-              <img src={websiteIcon.src} />
-            </a>
-          </button>
+          <a
+            href={websiteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link website"
+            aria-label="Visit website for this startpage"
+          >
+            <img src={websiteIcon.src} alt="" aria-hidden="true" />
+          </a>
         )
       }
     </div>
