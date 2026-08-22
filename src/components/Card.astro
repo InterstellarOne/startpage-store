@@ -103,15 +103,15 @@ const {
     <p class="ubuntu-regular card-description">{description}</p>
     <div class="ubuntu-light card-tags">
       {tags.map((tag) => <span class="tag">{tag}</span>)}
-      <h4 class="date-updated">
-        Date Updated: {
-          new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })
-        }
-      </h4>
     </div>
+    <h4 class="date-updated">
+      Date Updated: {
+        new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })
+      }
+    </h4>
   </div>
 </div>
