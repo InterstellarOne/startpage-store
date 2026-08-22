@@ -19,6 +19,7 @@ interface Props {
     src: string;
   };
   tags: string[];
+  dateAdded: number;
 }
 
 const {
@@ -31,6 +32,7 @@ const {
   dateUpdated,
   image,
   tags,
+  dateAdded,
 } = Astro.props;
 ---
 
@@ -46,7 +48,6 @@ const {
           <a
             href={firefoxLink}
             target="_blank"
-            rel="noopener noreferrer"
             class="icon-link firefox"
             aria-label="Download extension for Firefox-based browsers"
           >
@@ -59,7 +60,6 @@ const {
           <a
             href={chromeLink}
             target="_blank"
-            rel="noopener noreferrer"
             class="icon-link chrome"
             aria-label="Download extension for Chromium-based browsers"
           >
@@ -72,7 +72,6 @@ const {
           <a
             href={gitLink}
             target="_blank"
-            rel="noopener noreferrer"
             class="icon-link git"
             aria-label="View source code or installation instructions"
           >
@@ -85,7 +84,6 @@ const {
           <a
             href={websiteLink}
             target="_blank"
-            rel="noopener noreferrer"
             class="icon-link website"
             aria-label="Visit website for this startpage"
           >
@@ -104,7 +102,7 @@ const {
     <div class="ubuntu-light card-tags">
       {tags.map((tag) => <span class="tag">{tag}</span>)}
     </div>
-    <h4 class="date-updated">
+    <h4 class="date-updated ubuntu-medium">
       Date Updated: {
         new Date(dateUpdated * 1000).toLocaleDateString("en-US", {
           month: "long",
