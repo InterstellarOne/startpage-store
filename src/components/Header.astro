@@ -1,12 +1,15 @@
 ---
-
+import "../styles/global.css";
+import "../styles/header.css";
 ---
 
-<div class="header-container">
-  <img src="../assets/logo.png" alt="Logo" class="logo" />
-  <h1 class="header-title">Startpage.Store</h1>
-  <div class="header-spacer"></div>
-  <div class="header-links">
+<div id="header-container">
+  <div id="header-title-container">
+    <img src="src/assets/logo.svg" alt="Logo" id="header-logo" />
+    <h1 id="header-title" class="header-item ubuntu-bold">startpage.store</h1>
+    <div id="header-spacer" class="header-item"></div>
+  </div>
+  <div id="header-links" class="header-item">
     <a
       href="https://github.com/InterstellarOne/startpage-store"
       target="_blank"
@@ -19,16 +22,18 @@
       target="_blank"
       class="header-link"
     >
-      Submit a Startpage
+      Submit
     </a>
   </div>
-  <button id="theme-btn" class="header-theme-switcher">
-    {theme === "light" ? "🌙" : "☀️"}
+  <button id="theme-btn" class="header-item header-theme-switcher">
+    {
+      //theme === "light" ? "🌙" : "☀️"}
+    }
   </button>
+
+  <script>
+    const button = document.getElementById("theme-btn");
+
+    button?.addEventListener("click", () => {});
+  </script>
 </div>
-
-<script>
-  const button = document.getElementById("theme-btn");
-
-  button?.addEventListener("click", () => {});
-</script>

@@ -2,6 +2,7 @@
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
 
 const startpages = [
   {
@@ -78,21 +79,26 @@ const startpages = [
 ];
 ---
 
-<div id="card-grid" class="card-grid">
-  {
-    startpages.map((startpage) => (
-      <Card
-        title={startpage.title}
-        description={startpage.description}
-        dateUpdated={startpage.dateUpdated}
-        image={startpage.image}
-        firefoxLink={startpage.firefoxLink}
-        chromeLink={startpage.chromeLink}
-        gitLink={startpage.gitLink}
-        websiteLink={startpage.websiteLink}
-        tags={startpage.tags}
-        dateAdded={startpage.dateAdded}
-      />
-    ))
-  }
+<header>
+  <Header />
+</header>
+<div id="card-grid-container">
+  <div id="card-grid" class="card-grid">
+    {
+      startpages.map((startpage) => (
+        <Card
+          title={startpage.title}
+          description={startpage.description}
+          dateUpdated={startpage.dateUpdated}
+          image={startpage.image}
+          firefoxLink={startpage.firefoxLink}
+          chromeLink={startpage.chromeLink}
+          gitLink={startpage.gitLink}
+          websiteLink={startpage.websiteLink}
+          tags={startpage.tags}
+          dateAdded={startpage.dateAdded}
+        />
+      ))
+    }
+  </div>
 </div>
