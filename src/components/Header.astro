@@ -1,3 +1,7 @@
+---
+
+---
+
 <div class="header-container">
   <img src="../assets/logo.png" alt="Logo" class="logo" />
   <h1 class="header-title">Startpage.Store</h1>
@@ -18,4 +22,13 @@
       Submit a Startpage
     </a>
   </div>
+  <button id="theme-btn" class="header-theme-switcher">
+    {theme === "light" ? "🌙" : "☀️"}
+  </button>
 </div>
+
+<script>
+  const button = document.getElementById("theme-btn");
+
+  button?.addEventListener("click", () => {});
+</script>
