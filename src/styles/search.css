@@ -1,0 +1,9 @@
+
+Search {
+    background: rgba(253, 253, 255, 0.884);
+    padding: 15px;
+    margin: 10px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}

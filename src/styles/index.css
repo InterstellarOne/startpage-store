@@ -7,9 +7,17 @@
     width: 100%;
     justify-items: center;
   }
+
+  @media (min-width: 1050px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
   
   #card-grid-container {
     display: flex;
     justify-content: center;
     margin: 0 10px;
   }
+
+  

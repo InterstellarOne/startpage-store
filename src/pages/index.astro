@@ -3,6 +3,7 @@ import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
+import Search from "../components/Search.astro";
 
 const startpages = [
   {
@@ -76,6 +77,50 @@ const startpages = [
     ],
     dateAdded: 1787292184,
   },
+  {
+    title: "AYAYADASH - Anime Dashboard",
+    description:
+      "A new tab dashboard for anime fans. Enjoy beautiful anime scenery and inspirational anime quotes every time you open a new tab.",
+    dateUpdated: 1726275600,
+    chromeLink:
+      "https://chromewebstore.google.com/detail/ayayadash-anime-dashboard/pcilmcebllafjnlpkbcigemnookkklai",
+    image: {
+      src: "https://files.catbox.moe/n31xis.png",
+    },
+    tags: [
+      "Anime",
+      "Random Wallpaper",
+      "Customizable",
+      "Minimalist",
+      "Wallpaper",
+      "Clock",
+      "Weather",
+      "To-Do List",
+    ],
+    dateAdded: 1787292184,
+  },
+  {
+    title: "AYAYADASH - Anime Dashboard",
+    description:
+      "A new tab dashboard for anime fans. Enjoy beautiful anime scenery and inspirational anime quotes every time you open a new tab.",
+    dateUpdated: 1726275600,
+    chromeLink:
+      "https://chromewebstore.google.com/detail/ayayadash-anime-dashboard/pcilmcebllafjnlpkbcigemnookkklai",
+    image: {
+      src: "https://files.catbox.moe/n31xis.png",
+    },
+    tags: [
+      "Anime",
+      "Random Wallpaper",
+      "Customizable",
+      "Minimalist",
+      "Wallpaper",
+      "Clock",
+      "Weather",
+      "To-Do List",
+    ],
+    dateAdded: 1787292184,
+  },
 ];
 ---
 
@@ -83,6 +128,7 @@ const startpages = [
   <header>
     <Header />
   </header>
+  <Search />
   <div id="card-grid-container">
     <div id="card-grid" class="card-grid">
       {

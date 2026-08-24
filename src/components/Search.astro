@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+import "../styles/search.css";
+---
+
+<div id="search">
+  <search id="search-container">
+    <input
+      type="search"
+      id="theme-search"
+      placeholder="Search for titles, tags, or keywords"
+    />
+    <select id="theme-sort">
+      <option value="latest">Recently Added</option>
+      <option value="updated">Recently Updated</option>
+      <option value="alphabetical">Alphabetical</option>
+    </select>
+  </search>
+  <div id="tag-list"></div>
+</div>
