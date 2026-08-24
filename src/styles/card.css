@@ -4,7 +4,7 @@
   height: 100%;
   max-width: 500px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -28,15 +28,6 @@
   aspect-ratio: 16 / 10;
   background-size: cover;
   display: flex;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-.image-tile {
-  width: calc(100% - 10px);
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   border-radius: 10px;
   margin: 5px;
 }
