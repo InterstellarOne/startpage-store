@@ -1,9 +1,16 @@
 
 Search {
-    background: rgba(253, 253, 255, 0.884);
+    background: rgba(255, 255, 255, 0.795);
     padding: 15px;
     margin: 10px 30px;
     border-radius: 15px;
     display: flex;
     align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#search {
+    position: sticky;
+    top: 10px;
+    z-index: 1000000;
 }
