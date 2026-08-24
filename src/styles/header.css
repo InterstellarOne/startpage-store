@@ -19,19 +19,18 @@
 
 #header-links {
     display: flex;
+    align-items: center;
 }
 
 .header-link {
-    text-decoration: none;
-    color: #343434;
-    font-size: 18px;
     margin-right: 10px;
-    background-color: rgb(238, 238, 238);
-    padding: 4px;
-    border-radius: calc(100vh * 0.5);
-    border: 1px solid rgb(200, 200, 200);
 }
 
 #header-logo {
     margin-right: 10px;
+}
+
+#header-right-container {
+    display: flex;
+    align-items: center;
 }
