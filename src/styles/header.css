@@ -17,6 +17,12 @@
     color: #343434;
 }
 
+@media only screen and (width <= 410px) {
+    #header-title {
+        display: none;
+    }
+}
+
 #header-links {
     display: flex;
     align-items: center;

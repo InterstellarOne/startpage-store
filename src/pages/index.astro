@@ -79,26 +79,28 @@ const startpages = [
 ];
 ---
 
-<header>
-  <Header />
-</header>
-<div id="card-grid-container">
-  <div id="card-grid" class="card-grid">
-    {
-      startpages.map((startpage) => (
-        <Card
-          title={startpage.title}
-          description={startpage.description}
-          dateUpdated={startpage.dateUpdated}
-          image={startpage.image}
-          firefoxLink={startpage.firefoxLink}
-          chromeLink={startpage.chromeLink}
-          gitLink={startpage.gitLink}
-          websiteLink={startpage.websiteLink}
-          tags={startpage.tags}
-          dateAdded={startpage.dateAdded}
-        />
-      ))
-    }
+<Layout>
+  <header>
+    <Header />
+  </header>
+  <div id="card-grid-container">
+    <div id="card-grid" class="card-grid">
+      {
+        startpages.map((startpage) => (
+          <Card
+            title={startpage.title}
+            description={startpage.description}
+            dateUpdated={startpage.dateUpdated}
+            image={startpage.image}
+            firefoxLink={startpage.firefoxLink}
+            chromeLink={startpage.chromeLink}
+            gitLink={startpage.gitLink}
+            websiteLink={startpage.websiteLink}
+            tags={startpage.tags}
+            dateAdded={startpage.dateAdded}
+          />
+        ))
+      }
+    </div>
   </div>
-</div>
+</Layout>
