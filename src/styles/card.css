@@ -108,3 +108,14 @@
   width: 100%;
 }
 
+#license-open-source {
+  color: #17681b;
+}
+
+#license-proprietary {
+  color: #ca711d;
+}
+
+.license-typ {
+
+}
