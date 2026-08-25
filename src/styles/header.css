@@ -37,6 +37,7 @@
     align-items: center;
     background: #fafafa;
     padding: 4px;
+    padding-left: 8px;
     border-radius: 16px;
     transition: transform 0.2s ease-in-out;
 }
