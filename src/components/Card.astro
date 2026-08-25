@@ -21,6 +21,7 @@ interface Props {
   };
   tags: string[];
   dateAdded: number;
+  AIGenerated?: boolean;
 }
 
 const {
@@ -34,6 +35,7 @@ const {
   image,
   tags,
   dateAdded,
+  AIGenerated,
 } = Astro.props;
 ---
 

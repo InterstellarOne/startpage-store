@@ -27,6 +27,7 @@ const startpages = [
       "To-Do List",
     ],
     dateAdded: 1787292184,
+    AIGenerated: false,
   },
   {
     title: "Casca New Tab",
@@ -51,6 +52,7 @@ const startpages = [
       "Search",
     ],
     dateAdded: 1787292184,
+    AIGenerated: false,
   },
   {
     title: "nightTab",
@@ -76,6 +78,7 @@ const startpages = [
       "Search",
     ],
     dateAdded: 1787292184,
+    AIGenerated: false,
   },
   {
     title: "AYAYADASH - Anime Dashboard",
@@ -98,6 +101,7 @@ const startpages = [
       "To-Do List",
     ],
     dateAdded: 1787292184,
+    AIGenerated: false,
   },
   {
     title: "AYAYADASH - Anime Dashboard",
@@ -120,6 +124,7 @@ const startpages = [
       "To-Do List",
     ],
     dateAdded: 1787292184,
+    AIGenerated: false,
   },
 ];
 ---
@@ -128,7 +133,7 @@ const startpages = [
   <header>
     <Header />
   </header>
-  <Search />
+  <Search client:load />
   <div id="card-grid-container">
     <div id="card-grid" class="card-grid">
       {
@@ -144,6 +149,7 @@ const startpages = [
             websiteLink={startpage.websiteLink}
             tags={startpage.tags}
             dateAdded={startpage.dateAdded}
+            AIGenerated={startpage.AIGenerated}
           />
         ))
       }

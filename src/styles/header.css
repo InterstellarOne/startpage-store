@@ -35,9 +35,15 @@
 #header-submit {
     display: flex;
     align-items: center;
-    background: #ffffffd7;
+    background: #fafafa;
     padding: 4px;
     border-radius: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#header-submit:hover,
+.header-link:hover {
+    transform: scale(1.05);
 }
 
 .header-link {
@@ -48,6 +54,7 @@
     align-items: center;
     line-height: 1;
     padding: 0;
+    transition: transform 0.2s ease-in-out;
 }
 
 #header-link-github {
