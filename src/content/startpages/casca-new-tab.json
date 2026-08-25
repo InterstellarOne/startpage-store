@@ -1,0 +1,29 @@
+{
+    "title": "Casca New Tab",
+    "description":
+      "Casca Extension is a tool with ChatGPT for productivity and collaboration. Customize your new tab, create and share multiple spaces, and maintain a work-life balance with ease. ",
+    "dateUpdated": 1714698000,
+    "firefoxLink":
+      "https://addons.mozilla.org/en-GB/firefox/addon/casca-new-tab/",
+    "chromeLink":
+      "https://chromewebstore.google.com/detail/casca-new-tab-with-chatgp/nifaiikfnpnppeicpgannigjabpjdcmh",
+    "image": {
+      "src": "https://addons.mozilla.org/user-media/previews/full/299/299208.png?modified=1715149228"
+    },
+    "tags": [
+      "Modular",
+      "Widgets",
+      "Workspaces",
+      "Bookmarks",
+      "Collaboration",
+      "ChatGPT",
+      "Notes",
+      "Sync"
+    ],
+    "dateAdded": 1787292184,
+    "proprietary": true
+}
+
+
+
+  

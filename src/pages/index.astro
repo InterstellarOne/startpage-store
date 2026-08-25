@@ -4,155 +4,19 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
 import Search from "../components/Search.astro";
+import { getCollection } from "astro:content";
 
-const startpages = [
-  {
-    title: "AYAYADASH - Anime Dashboard",
-    description:
-      "A new tab dashboard for anime fans. Enjoy beautiful anime scenery and inspirational anime quotes every time you open a new tab.",
-    dateUpdated: 1726275600,
-    chromeLink:
-      "https://chromewebstore.google.com/detail/ayayadash-anime-dashboard/pcilmcebllafjnlpkbcigemnookkklai",
-    image: {
-      src: "https://files.catbox.moe/n31xis.png",
-    },
-    tags: [
-      "Anime",
-      "Random Wallpaper",
-      "Customizable",
-      "Minimalist",
-      "Wallpaper",
-      "Clock",
-      "Weather",
-      "To-Do List",
-    ],
-    dateAdded: 1787292184,
-    AIGenerated: false,
-  },
-  {
-    title: "Casca New Tab",
-    description:
-      "Casca Extension is a tool with ChatGPT for productivity and collaboration. Customize your new tab, create and share multiple spaces, and maintain a work-life balance with ease. ",
-    dateUpdated: 1714698000,
-    firefoxLink:
-      "https://addons.mozilla.org/en-GB/firefox/addon/casca-new-tab/",
-    chromeLink:
-      "https://chromewebstore.google.com/detail/casca-new-tab-with-chatgp/nifaiikfnpnppeicpgannigjabpjdcmh",
-    image: {
-      src: "https://addons.mozilla.org/user-media/previews/full/299/299208.png?modified=1715149228",
-    },
-    tags: [
-      "Modular",
-      "Widgets",
-      "Workspaces",
-      "Bookmarks",
-      "Collaboration",
-      "ChatGPT",
-      "Notes",
-      "Search",
-    ],
-    dateAdded: 1787292184,
-    AIGenerated: false,
-  },
-  {
-    title: "nightTab",
-    description:
-      "A neutral new tab page accented with a chosen colour. Customise the layout, style, background and bookmarks.",
-    dateUpdated: 1633222800,
-    firefoxLink: "https://addons.mozilla.org/en-US/firefox/addon/nighttab/",
-    chromeLink:
-      "https://chromewebstore.google.com/detail/nighttab/hdpcadigjkbcpnlcpbcohpafiaefanki",
-    gitLink: "https://github.com/zombieFox/nightTab",
-    websiteLink: "https://zombiefox.github.io/nightTab/",
-    image: {
-      src: "https://addons.mozilla.org/user-media/previews/thumbs/260/260629.jpg?modified=1630245811",
-    },
-    tags: [
-      "Modular",
-      "Wallpaper",
-      "Widgets",
-      "Bookmarks",
-      "Folders",
-      "Customizable",
-      "Themes",
-      "Search",
-    ],
-    dateAdded: 1787292184,
-    AIGenerated: false,
-  },
-  {
-    title: "AYAYADASH - Anime Dashboard",
-    description:
-      "A new tab dashboard for anime fans. Enjoy beautiful anime scenery and inspirational anime quotes every time you open a new tab.",
-    dateUpdated: 1726275600,
-    chromeLink:
-      "https://chromewebstore.google.com/detail/ayayadash-anime-dashboard/pcilmcebllafjnlpkbcigemnookkklai",
-    image: {
-      src: "https://files.catbox.moe/n31xis.png",
-    },
-    tags: [
-      "Anime",
-      "Random Wallpaper",
-      "Customizable",
-      "Minimalist",
-      "Wallpaper",
-      "Clock",
-      "Weather",
-      "To-Do List",
-    ],
-    dateAdded: 1787292184,
-    AIGenerated: false,
-  },
-  {
-    title: "AYAYADASH - Anime Dashboard",
-    description:
-      "A new tab dashboard for anime fans. Enjoy beautiful anime scenery and inspirational anime quotes every time you open a new tab.",
-    dateUpdated: 1726275600,
-    chromeLink:
-      "https://chromewebstore.google.com/detail/ayayadash-anime-dashboard/pcilmcebllafjnlpkbcigemnookkklai",
-    image: {
-      src: "https://files.catbox.moe/n31xis.png",
-    },
-    tags: [
-      "Anime",
-      "Random Wallpaper",
-      "Customizable",
-      "Minimalist",
-      "Wallpaper",
-      "Clock",
-      "Weather",
-      "To-Do List",
-    ],
-    dateAdded: 1787292184,
-    AIGenerated: false,
-  },
-];
+const startpages = await getCollection("startpages");
 ---
 
 <Layout>
   <header>
     <Header />
   </header>
-  <Search client:load />
+  <Search />
   <div id="card-grid-container">
     <div id="card-grid" class="card-grid">
-      {
-        startpages.map((startpage) => (
-          <Card
-            title={startpage.title}
-            description={startpage.description}
-            dateUpdated={startpage.dateUpdated}
-            image={startpage.image}
-            firefoxLink={startpage.firefoxLink}
-            chromeLink={startpage.chromeLink}
-            gitLink={startpage.gitLink}
-            websiteLink={startpage.websiteLink}
-            tags={startpage.tags}
-            dateAdded={startpage.dateAdded}
-            AIGenerated={startpage.AIGenerated}
-          />
-        ))
-      }
+      {startpages.map((startpage) => <Card {...startpage.data} />)}
     </div>
   </div>
 </Layout>

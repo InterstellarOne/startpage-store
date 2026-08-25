@@ -20,8 +20,7 @@ interface Props {
     src: string;
   };
   tags: string[];
-  dateAdded: number;
-  AIGenerated?: boolean;
+  proprietary: boolean;
 }
 
 const {
@@ -34,8 +33,7 @@ const {
   dateUpdated,
   image,
   tags,
-  dateAdded,
-  AIGenerated,
+  proprietary,
 } = Astro.props;
 ---
 
@@ -104,6 +102,51 @@ const {
         {tags.map((tag) => <span class="tag">{tag}</span>)}
       </div>
       <hr class="card-divider" />
+      {
+        proprietary ? (
+          <div id="license-proprietary" class="license-type">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-open-source"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 3a9 9 0 0 1 3.618 17.243l-2.193 -5.602a3 3 0 1 0 -2.849 0l-2.193 5.603a9 9 0 0 1 3.617 -17.244" />
+            </svg>
+            <span>Proprietary</span>
+          </div>
+        ) : (
+          <div id="license-open-source" class="license-type">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-alert-triangle"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 9v4" />
+                <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+                <path d="M12 16h.01" />
+              </>
+            </svg>
+            <span>Open Source</span>
+          </div>
+        )
+      }
       <h4 class="date-updated roboto-regular">
         Last Updated: {
           new Date(dateUpdated * 1000).toLocaleDateString("en-CA", {

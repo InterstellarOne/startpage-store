@@ -1,0 +1,28 @@
+{
+  "title": "Anori",
+  "description": "A themeable new tab with customizable widgets and separate workspaces. Choose from six colorschemes and backgrounds, or make your own.", 
+    "dateUpdated": 1787249731,
+    "firefoxLink": "https://addons.mozilla.org/en-GB/firefox/addon/anori/",
+    "chromeLink": "https://chromewebstore.google.com/detail/anori-productivity-new-ta/ddeaekifelikgnaacipabpmjpffgifek",
+    "gitLink": "https://github.com/OlegWock/anori",
+    "websiteLink": "https://anori.app/",
+    "image": {
+      "src": "https://files.catbox.moe/cjaxrw.png"
+    },
+    "tags": [
+      "Modular",
+      "Wallpaper",
+      "Widgets",
+      "Bookmarks",
+      "Folders",
+      "Customizable",
+      "Themes",
+      "Sync"
+    ],
+    "dateAdded": 1787676541,
+    "proprietary": false
+}
+
+
+
+  

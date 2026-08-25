@@ -1,0 +1,19 @@
+{
+  "title": <title>,
+  "description": <desc>, 
+    "dateUpdated": <update-epoch>,
+    "firefoxLink": <firefox-link>,
+    "chromeLink": <chrome-link>,
+    "safariLink": <safari-link>,
+    "gitLink": <git-link>,
+    "websiteLink": <website-link>,
+    "image": {
+      "src": <image-src>
+    },
+    "tags": [
+      <tag>,
+
+    ],
+    "dateAdded": <added-epoch>,
+    "AIGenerated": <bool>
+}
