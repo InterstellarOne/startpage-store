@@ -23,4 +23,13 @@ const startpages = defineCollection({
 		}),
 });
 
-export const collections = { startpages };
+const tags = defineCollection({
+	loader: glob({ base: './src/content/startpages', pattern: '**/*.json' }),
+	// Type-check frontmatter using a schema
+	schema: ({ }) =>
+		z.object({
+            tags: z.array(z.string()),
+		}),
+});
+
+export const collections = { startpages, tags };

@@ -109,13 +109,18 @@
 }
 
 #license-open-source {
-  color: #17681b;
+  color: #1d8322;
 }
 
 #license-proprietary {
-  color: #ca711d;
+  color: #504e4c;
 }
 
-.license-typ {
+.license-type {
+  display: flex;
+  align-items: center;
+}
 
+.license-text {
+  margin-left: 5px;
 }

@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css";
 import "../styles/search.css";
+import { getCollection } from "astro:content";
+
+const tagArray = await getCollection("tags");
+const tags = tagArray.flatMap((item) => item.data.tags);
+const uniqueTags = Array.from(new Set(tags));
 ---
 
 <div id="search">
@@ -18,17 +23,19 @@ import "../styles/search.css";
     </select>
   </search>
   <div id="search-row-2" class="search-row">
-    <div id="search-ai" class="search-ai">
-      <label for="excludeAI" class="search-ai-label"
+    <div id="search-prop" class="search-prop">
+      <label for="includeProp" class="search-prop-label"
         >Include proprietary startpages</label
       >
       <input
         type="checkbox"
-        name="excludeAI"
-        class="search-ai-checkbox"
+        name="includeProp"
+        class="search-prop-checkbox"
         checked="true"
       />
     </div>
-    <div id="tag-list"></div>
+    <div id="tag-list">
+      {uniqueTags.map((uniqueTags) => <span class="tag">{uniqueTags}</span>)}
+    </div>
   </div>
 </div>
