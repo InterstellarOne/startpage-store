@@ -13,8 +13,14 @@
     flex-direction: row;
 }
 
+@media (max-width: 530px) {
+    #search-row-1 {
+        flex-direction: column;
+    }
+}
+
 #search {
-    position: sticky;
+    /*position: sticky;*/
     top: 10px;
     z-index: 1000000;
 }
@@ -63,6 +69,10 @@
 .search-item {
     margin-right: 5px;
 }
+#tag-list {
+    display: none !important;
+}
+
 
 #tag-list {
     overflow-x: scroll;
