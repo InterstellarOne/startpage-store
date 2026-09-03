@@ -20,3 +20,52 @@ const startpages = await getCollection("startpages");
     </div>
   </div>
 </Layout>
+
+<script>
+  function sortCards(method: string) {
+    const grid = document.getElementById("card-grid") as HTMLElement;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
+
+    cards.sort((a, b) => {
+      switch (method) {
+        case "latest":
+          return Number(b.dataset.dateAdded) - Number(a.dataset.dateAdded);
+        case "updated":
+          return Number(b.dataset.dateUpdated) - Number(a.dataset.dateUpdated);
+        case "title":
+          return (a.dataset.title ?? "").localeCompare(b.dataset.title ?? "");
+        default:
+          return 0;
+      }
+    });
+
+    cards.forEach((card) => grid.appendChild(card));
+  }
+
+  function searchCards(filterKeyword: string) {
+    const grid = document.getElementById("card-grid") as HTMLElement;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
+
+    const filtered = cards.filter(
+      (c) =>
+        c.dataset.title?.toLowerCase().includes(filterKeyword) ||
+        c.dataset.desc?.toLowerCase().includes(filterKeyword) ||
+        c.dataset.tags?.toLowerCase().includes(filterKeyword),
+    );
+
+    cards.forEach((card) => (card.style.display = "none"));
+    filtered.forEach((card) => (card.style.display = ""));
+  }
+
+  window.addEventListener("sort-changed", (e) => {
+    const event = e as CustomEvent<{ sort: string }>;
+    sortCards(event.detail.sort);
+  });
+
+  window.addEventListener("search-changed", (e) => {
+    const event = e as CustomEvent<{ search: string }>;
+    searchCards(event.detail.search);
+  });
+
+  sortCards("latest");
+</script>
