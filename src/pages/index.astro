@@ -42,19 +42,27 @@ const startpages = await getCollection("startpages");
     cards.forEach((card) => grid.appendChild(card));
   }
 
-  function searchCards(filterKeyword: string) {
+  function searchCards(filterKeywordString: string) {
     const grid = document.getElementById("card-grid") as HTMLElement;
     const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
-
-    const filtered = cards.filter(
-      (c) =>
-        c.dataset.title?.toLowerCase().includes(filterKeyword) ||
-        c.dataset.desc?.toLowerCase().includes(filterKeyword) ||
-        c.dataset.tags?.toLowerCase().includes(filterKeyword),
-    );
-
     cards.forEach((card) => (card.style.display = "none"));
-    filtered.forEach((card) => (card.style.display = ""));
+
+    //put each individual word in an array, iterate through each word in a for each
+    //loop, and use each as the filtewrKeyword within that loop called on the
+    //existing filter code that I have.
+
+    const filterKeywordArray = filterKeywordString.split(" ");
+
+    filterKeywordArray.forEach((filterKeyword) => {
+      const filtered = cards.filter(
+        (c) =>
+          c.dataset.title?.toLowerCase().includes(filterKeyword) ||
+          c.dataset.desc?.toLowerCase().includes(filterKeyword) ||
+          c.dataset.tags?.toLowerCase().includes(filterKeyword),
+      );
+
+      filtered.forEach((card) => (card.style.display = ""));
+    });
   }
 
   window.addEventListener("sort-changed", (e) => {
