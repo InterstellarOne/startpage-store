@@ -65,19 +65,14 @@ const startpages = await getCollection("startpages");
   }
 
   function hideProprietary() {
-    const filtered = cards.filter((d) => {
-      d.dataset.proprietary;
-    });
-
-    filtered.forEach((card) => (card.style.display = "false"));
+    cards.forEach(
+      (card) =>
+        card.dataset.proprietary == "true" && (card.style.display = "none"),
+    );
   }
 
   function showProprietary() {
-    const filtered = cards.filter((d) => {
-      !d.dataset.proprietary;
-    });
-
-    filtered.forEach((card) => (card.style.display = ""));
+    cards.forEach((card) => (card.style.display = ""));
   }
 
   window.addEventListener("sort-changed", (e) => {
@@ -90,14 +85,9 @@ const startpages = await getCollection("startpages");
     searchCards(event.detail.search);
   });
 
-  window.addEventListener("proprietary-disabled", (e) => {
-    const event = e as CustomEvent;
-    hideProprietary;
-  });
-
-  window.addEventListener("proprietary-enabled", (e) => {
-    const event = e as CustomEvent;
-    showProprietary;
+  window.addEventListener("checkbox-changed", (e) => {
+    const event = e as CustomEvent<{ checked: boolean }>;
+    event.detail.checked ? showProprietary() : hideProprietary();
   });
 
   sortCards("latest");

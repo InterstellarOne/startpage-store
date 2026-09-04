@@ -62,13 +62,15 @@ const uniqueTags = Array.from(new Set(tags));
     );
   });
 
-  const selectCheckbox = document.getElementById(
+  const checkbox = document.getElementById(
     "search-prop-checkbox",
   ) as HTMLInputElement;
 
-  selectCheckbox?.addEventListener("change", () => {
-    selectCheckbox?.checked
-      ? window.dispatchEvent(new CustomEvent("proprietary-enabled"))
-      : window.dispatchEvent(new CustomEvent("proprietary-disabled"));
+  checkbox?.addEventListener("change", () => {
+    window.dispatchEvent(
+      new CustomEvent("checkbox-changed", {
+        detail: { checked: checkbox.checked },
+      }),
+    );
   });
 </script>
