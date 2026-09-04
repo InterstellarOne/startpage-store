@@ -22,11 +22,10 @@ const startpages = await getCollection("startpages");
 </Layout>
 
 <script>
+  const grid = document.getElementById("card-grid") as HTMLElement;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
   // sorts the cards based on latest added, latest updated, or alphabetical.
   function sortCards(method: string) {
-    const grid = document.getElementById("card-grid") as HTMLElement;
-    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
-
     cards.sort((a, b) => {
       switch (method) {
         case "latest":
@@ -46,8 +45,6 @@ const startpages = await getCollection("startpages");
   // search function; filters the title and description based on keywords,
   // and checks if all the tags in the keyword are found on each card.
   function searchCards(filterKeywordString: string) {
-    const grid = document.getElementById("card-grid") as HTMLElement;
-    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
     const filterKeywordArray = filterKeywordString.toLowerCase().split(" ");
     cards.forEach((card) => (card.style.display = "none"));
 
@@ -67,6 +64,22 @@ const startpages = await getCollection("startpages");
     filtered.forEach((card) => (card.style.display = ""));
   }
 
+  function hideProprietary() {
+    const filtered = cards.filter((d) => {
+      d.dataset.proprietary;
+    });
+
+    filtered.forEach((card) => (card.style.display = "false"));
+  }
+
+  function showProprietary() {
+    const filtered = cards.filter((d) => {
+      !d.dataset.proprietary;
+    });
+
+    filtered.forEach((card) => (card.style.display = ""));
+  }
+
   window.addEventListener("sort-changed", (e) => {
     const event = e as CustomEvent<{ sort: string }>;
     sortCards(event.detail.sort);
@@ -75,6 +88,16 @@ const startpages = await getCollection("startpages");
   window.addEventListener("search-changed", (e) => {
     const event = e as CustomEvent<{ search: string }>;
     searchCards(event.detail.search);
+  });
+
+  window.addEventListener("proprietary-disabled", (e) => {
+    const event = e as CustomEvent;
+    hideProprietary;
+  });
+
+  window.addEventListener("proprietary-enabled", (e) => {
+    const event = e as CustomEvent;
+    showProprietary;
   });
 
   sortCards("latest");
