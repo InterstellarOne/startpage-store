@@ -22,8 +22,7 @@ const startpages = await getCollection("startpages");
 </Layout>
 
 <script>
-  import { check } from "astro:schema";
-
+  // sorts the cards based on latest added, latest updated, or alphabetical.
   function sortCards(method: string) {
     const grid = document.getElementById("card-grid") as HTMLElement;
     const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
@@ -44,49 +43,29 @@ const startpages = await getCollection("startpages");
     cards.forEach((card) => grid.appendChild(card));
   }
 
-  // function searchCards(filterKeywordString: string) {
-  //   const grid = document.getElementById("card-grid") as HTMLElement;
-  //   const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
-  //   cards.forEach((card) => (card.style.display = "none"));
-
-  //   //put each individual word in an array, iterate through each word in a for each
-  //   //loop, and use each as the filtewrKeyword within that loop called on the
-  //   //existing filter code that I have.
-
-  //   const filterKeywordArray = filterKeywordString.split(" ");
-
-  //   filterKeywordArray.forEach((filterKeyword) => {
-  //     const filtered = cards.filter(
-  //       (c) =>
-  //         c.dataset.title?.toLowerCase().includes(filterKeyword) ||
-  //         c.dataset.desc?.toLowerCase().includes(filterKeyword) ||
-  //         c.dataset.tags?.toLowerCase().includes(filterKeyword),
-  //     );
-
-  //     filtered.forEach((card) => (card.style.display = ""));
-  //   });
-  // }
-
+  // search function; filters the title and description based on keywords,
+  // and checks if all the tags in the keyword are found on each card.
   function searchCards(filterKeywordString: string) {
     const grid = document.getElementById("card-grid") as HTMLElement;
     const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
     const filterKeywordArray = filterKeywordString.toLowerCase().split(" ");
     cards.forEach((card) => (card.style.display = "none"));
 
-    const filtered = cards.filter(
-      (c) =>
+    const filtered = cards.filter((c) => {
+      const tags: string[] = c.dataset.tags?.split(" ") ?? [];
+      return (
         c.dataset.title?.includes(filterKeywordString) ||
         filterKeywordArray.every((keyword) =>
           c.dataset.desc?.includes(keyword),
         ) ||
         filterKeywordArray.every((keyword) =>
-          c.dataset.tags?.includes(keyword),
-        ),
-    );
+          tags.some((tag: string) => tag.includes(keyword)),
+        )
+      );
+    });
 
     filtered.forEach((card) => (card.style.display = ""));
   }
-  // for each card, for each keyword, if it does not match the keyword, hide it
 
   window.addEventListener("sort-changed", (e) => {
     const event = e as CustomEvent<{ sort: string }>;
