@@ -72,7 +72,7 @@
 }
 
 #theme-btn {
-    display: flex;
+    display: none; /*flex*/
     align-items: center;
     justify-content: center;
     cursor: pointer;
