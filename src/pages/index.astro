@@ -24,6 +24,7 @@ const startpages = await getCollection("startpages");
 <script>
   const grid = document.getElementById("card-grid") as HTMLElement;
   const cards = Array.from(grid.querySelectorAll<HTMLElement>(".card"));
+  let lastSearch = "";
   // sorts the cards based on latest added, latest updated, or alphabetical.
   function sortCards(method: string) {
     cards.sort((a, b) => {
@@ -73,6 +74,7 @@ const startpages = await getCollection("startpages");
 
   function showProprietary() {
     cards.forEach((card) => (card.style.display = ""));
+    searchCards(lastSearch);
   }
 
   window.addEventListener("sort-changed", (e) => {
@@ -83,6 +85,7 @@ const startpages = await getCollection("startpages");
   window.addEventListener("search-changed", (e) => {
     const event = e as CustomEvent<{ search: string }>;
     searchCards(event.detail.search);
+    lastSearch = event.detail.search;
   });
 
   window.addEventListener("checkbox-changed", (e) => {
