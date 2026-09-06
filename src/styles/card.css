@@ -108,6 +108,10 @@
   width: 100%;
 }
 
+#info-line-1 {
+  display: flex;
+}
+
 #license-open-source {
   color: #1d8322;
 }
@@ -116,11 +120,18 @@
   color: #504e4c;
 }
 
-.license-type {
+.license-type, #github-stars, #divider {
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
-.license-text {
+.license-text, #stars-text {
   margin-left: 5px;
+}
+
+#github-stars {
+  border-left: 2px dashed #bebebe;
+  padding-left: 10px;
+  color: #8b6f32
 }

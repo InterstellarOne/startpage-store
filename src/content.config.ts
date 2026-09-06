@@ -20,6 +20,7 @@ const startpages = defineCollection({
             tags: z.array(z.string()),
             dateAdded: z.number(),
             proprietary: z.boolean().optional(),
+			stars: z.number().optional(),
 		}),
 });
 

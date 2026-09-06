@@ -1,0 +1,26 @@
+name: Update Date Updated
+
+on: 
+    schedule:
+        - cron: "0 0 * * 0"
+    workflow_dispatch:
+
+jobs:
+    update_dates:
+        name: Update Dates
+        runs-on: ubuntu-latest
+        steps:
+            - name: Update Json File
+              uses: restackio/update-json-file-action@2.1
+              with:
+                file: my-file.json
+                field: dateUpdated
+                value: {dateUpdated}
+
+
+
+
+
+
+
+
