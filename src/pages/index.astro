@@ -52,6 +52,7 @@ const startpages = await getCollection("startpages");
     const filtered = cards.filter((c) => {
       const tags: string[] = c.dataset.tags?.split(" ") ?? [];
       return (
+        // If you see this again, write comments for this algorithm - I forgot how it works
         c.dataset.title?.includes(filterKeywordString) ||
         filterKeywordArray.every((keyword) =>
           c.dataset.desc?.includes(keyword),
