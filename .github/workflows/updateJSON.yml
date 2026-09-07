@@ -19,11 +19,4 @@ jobs:
                 node-version: 24
 
             - name: Update Json Files
-              run: node ../scripts/update-JSON.js
-
-
-
-
-
-
-
+              run: node src/scripts/update-JSON.mjs

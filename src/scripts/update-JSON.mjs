@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const targetDir = "../../src/content/startpages";
+const targetDir = "src/content/startpages";
 
 const files = fs.readdirSync(targetDir);           
 
@@ -121,8 +121,14 @@ for (const file of files) {
         // There is https://chrome-stats.com/ but you need to provide an API key and I'm not dumb enough to put my key in this file haha
     }
 
-    if (newStars > curStars && content.stars !== undefined) content.stars = newStars;
-    if (newDate > curDate) content.dateUpdated = newDate;
+    if (newStars > curStars && content.stars !== undefined) {
+        content.stars = newStars;
+        console.log("Updated star count of ", content.title)
+    }
+    if (newDate > curDate) {
+        content.dateUpdated = newDate;
+        console.log("Updated date of ", content.title);
+    }
 
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
 }        
