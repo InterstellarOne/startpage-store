@@ -1,29 +1,25 @@
 {
   "title": "NightTab",
-  "description": "A neutral new tab page accented with a chosen colour. Customise the layout, style, background and bookmarks.", 
-    "dateUpdated": 1633222800000,
-    "firefoxLink": "https://addons.mozilla.org/en-US/firefox/addon/nighttab/",
-    "chromeLink": "https://chromewebstore.google.com/detail/nighttab/hdpcadigjkbcpnlcpbcohpafiaefanki",
-    "gitLink": "https://github.com/zombieFox/nightTab",
-    "websiteLink": "https://zombiefox.github.io/nightTab/",
-    "image": {
-      "src": "https://addons.mozilla.org/user-media/previews/thumbs/260/260629.jpg?modified=1630245811"
-    },
-    "tags": [
-      "Modular",
-      "Wallpaper",
-      "Widgets",
-      "Bookmarks",
-      "Folders",
-      "Customizable",
-      "Themes",
-      "Search"
-    ],
-    "dateAdded": 1787292184000,
-    "proprietary": false,
-    "stars": 1300
+  "description": "A neutral new tab page accented with a chosen colour. Customise the layout, style, background and bookmarks.",
+  "dateUpdated": 1788760562000,
+  "firefoxLink": "https://addons.mozilla.org/en-US/firefox/addon/nighttab/",
+  "chromeLink": "https://chromewebstore.google.com/detail/nighttab/hdpcadigjkbcpnlcpbcohpafiaefanki",
+  "gitLink": "https://github.com/zombieFox/nightTab",
+  "websiteLink": "https://zombiefox.github.io/nightTab/",
+  "image": {
+    "src": "https://addons.mozilla.org/user-media/previews/thumbs/260/260629.jpg?modified=1630245811"
+  },
+  "tags": [
+    "Modular",
+    "Wallpaper",
+    "Widgets",
+    "Bookmarks",
+    "Folders",
+    "Customizable",
+    "Themes",
+    "Search"
+  ],
+  "dateAdded": 1787292184000,
+  "proprietary": false,
+  "stars": 2049
 }
-
-
-
-  
