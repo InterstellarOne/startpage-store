@@ -7,7 +7,7 @@ on:
 
 jobs:
     update_dates:
-        name: Update Dates
+        name: Update Dates & Stars
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -22,7 +22,7 @@ jobs:
 
             - name: Update Json Files
               run: node src/scripts/update-JSON.mjs
-              
+
             - name: Commit and push changes
               run: |
                 git config --global user.name 'github-actions[bot]'

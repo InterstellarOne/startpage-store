@@ -21,7 +21,7 @@ async function getREST(url, platform) {
         switch(platform) {
             case "github":
                 stars = data.stargazers_count;
-                lastUpdated = Date.parse(data.updated_at);
+                lastUpdated = Date.parse(data.pushed_at);
                 break;
             case "codeberg":
                 stars = data.stars_count;
@@ -124,7 +124,10 @@ for (const file of files) {
     if (newStars > curStars && content.stars !== undefined) {
         content.stars = newStars;
         console.log("Updated star count of", content.title)
+    } else if (content.stars == undefined){
+        console.log("No star attribute found for", content.title)
     }
+
     if (newDate > curDate) {
         content.dateUpdated = newDate;
         console.log("Updated date of", content.title);
