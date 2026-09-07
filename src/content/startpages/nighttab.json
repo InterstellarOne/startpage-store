@@ -1,7 +1,7 @@
 {
   "title": "NightTab",
   "description": "A neutral new tab page accented with a chosen colour. Customise the layout, style, background and bookmarks.", 
-    "dateUpdated": 1633222800,
+    "dateUpdated": 1633222800000,
     "firefoxLink": "https://addons.mozilla.org/en-US/firefox/addon/nighttab/",
     "chromeLink": "https://chromewebstore.google.com/detail/nighttab/hdpcadigjkbcpnlcpbcohpafiaefanki",
     "gitLink": "https://github.com/zombieFox/nightTab",
@@ -19,7 +19,7 @@
       "Themes",
       "Search"
     ],
-    "dateAdded": 1787292184,
+    "dateAdded": 1787292184000,
     "proprietary": false,
     "stars": 1300
 }
