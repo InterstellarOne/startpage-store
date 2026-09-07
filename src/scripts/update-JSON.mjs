@@ -117,17 +117,17 @@ for (const file of files) {
 
     } else if (content.chromeLink) {
         // Update this if I move off of github pages to vercel or something
-        console.error("Cannot get updated date from Chrome Web Store for ", content.title);
+        console.error("Cannot get updated date from Chrome Web Store for", content.title);
         // There is https://chrome-stats.com/ but you need to provide an API key and I'm not dumb enough to put my key in this file haha
     }
 
     if (newStars > curStars && content.stars !== undefined) {
         content.stars = newStars;
-        console.log("Updated star count of ", content.title)
+        console.log("Updated star count of", content.title)
     }
     if (newDate > curDate) {
         content.dateUpdated = newDate;
-        console.log("Updated date of ", content.title);
+        console.log("Updated date of", content.title);
     }
 
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
