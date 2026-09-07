@@ -6,22 +6,20 @@ on:
     workflow_dispatch:
 
 jobs:
-    setup:
-        runs-on: ubuntu-latest
-        outputs:
-            files_matrix: ${{ steps.set-matrix.outputs.files }}
-        steps:
     update_dates:
         name: Update Dates
         runs-on: ubuntu-latest
         steps:
-            - name: Update Json File
-              uses: restackio/update-json-file-action@2.1
-              with:
-                file: my-file.json
-                field: dateUpdated
-                value: {dateUpdated}
+            - name: Checkout repository
+              uses: actions/checkout@v4
 
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24
+
+            - name: Update Json Files
+              run: node ../scripts/update-JSON.js
 
 
 
