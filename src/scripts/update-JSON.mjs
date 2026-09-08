@@ -51,7 +51,7 @@ async function getChromeREST(url) {
         const response = await fetch(url, {
             headers: {
                 "accept": "application/json",
-                "x-api-key": chromeStatsKey
+                "x-api-key": process.env.CHROME_STATS
             }
         });
 
@@ -59,10 +59,10 @@ async function getChromeREST(url) {
             throw new Error("Invalid URL (404)");
         }
 
-        if (!response.ok) throw new Error("Error fetching release data", response.status);
+        if (!response.ok) throw new Error(`Error fetching release data: ${response.status}`);
 
         const data = await response.json();
-        console.log("Test", content.title);
+        console.log("Test", data.title);
 
         return Date.parse(data.lastUpdate) || 0;
          
