@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const targetDir = "src/content/startpages";
+const chromeStatsKey = process.env.CHROME_STATS;
 
 const files = fs.readdirSync(targetDir);           
 
@@ -37,6 +38,29 @@ async function getREST(url, platform) {
         }
 
         return [stars, lastUpdated]
+         
+    } catch (error) {
+        console.error("Error:", error);
+        return [0, 0];
+    }
+}                
+
+async function getChromeREST(url) {
+    try {
+        const response = await fetch(url, {
+            headers: {"x-api-key": chromeStatsKey}
+        });
+
+        if (response.status === 404) {
+            throw new Error("Error: Invalid URL");
+        }
+
+        if (!response.ok) throw new Error("Error fetching release data");
+
+        const data = await response.json();
+        console.log("Test", content.title);
+
+        return Date.parse(data.lastUpdate);
          
     } catch (error) {
         console.error("Error:", error);
@@ -116,9 +140,16 @@ for (const file of files) {
         newDate = data[1];
 
     } else if (content.chromeLink) {
-        // Update this if I move off of github pages to vercel or something
-        console.error("Cannot get updated date from Chrome Web Store for", content.title);
-        // There is https://chrome-stats.com/ but you need to provide an API key and I'm not dumb enough to put my key in this file haha
+        const url = new URL(content.chromeLink);
+        const segments = url.pathname.split("/")
+        const urlPath = segments[segments.length - 1];
+        urlPart = "api/detail?id="
+        endpoint = new URL(
+            urlPart,
+            "https://chrome-stats.com/"
+        )
+
+        newDate = await getChromeREST(endpoint);
     }
 
     if (newStars > curStars && content.stars !== undefined) {

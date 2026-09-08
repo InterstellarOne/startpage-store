@@ -21,6 +21,9 @@ jobs:
                 node-version: 24
 
             - name: Update Json Files
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                CHROME_STATS_API_KEY: ${{ secrets.CHROME_STATS }}
               run: node src/scripts/update-JSON.mjs
 
             - name: Commit and push changes
