@@ -147,7 +147,7 @@ for (const file of files) {
         const url = new URL(content.chromeLink);
         const segments = url.pathname.split("/")
         const urlPath = segments[segments.length - 1];
-        urlPart = "api/detail?id="
+        urlPart = "api/detail?id=" + urlPath;
         endpoint = new URL(
             urlPart,
             "https://chrome-stats.com/"
