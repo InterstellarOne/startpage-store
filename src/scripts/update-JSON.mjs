@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const targetDir = "src/content/startpages";
-const chromeStatsKey = process.env.CHROME_STATS;
+const chromeStatsKey = process.env.CHROME_STATS_API_KEY;
 
 const files = fs.readdirSync(targetDir);           
 
@@ -51,7 +51,7 @@ async function getChromeREST(url) {
         const response = await fetch(url, {
             headers: {
                 "accept": "application/json",
-                "x-api-key": process.env.CHROME_STATS
+                "x-api-key": chromeStatsKey
             }
         });
 
