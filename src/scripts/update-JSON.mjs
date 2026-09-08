@@ -56,10 +56,10 @@ async function getChromeREST(url) {
         });
 
         if (response.status === 404) {
-            throw new Error("Error: Invalid URL (404)");
+            throw new Error("Invalid URL (404)");
         }
 
-        if (!response.ok) throw new Error("Error fetching release data ${response.status}");
+        if (!response.ok) throw new Error("Error fetching release data", response.status);
 
         const data = await response.json();
         console.log("Test", content.title);
