@@ -62,7 +62,6 @@ async function getChromeREST(url) {
         if (!response.ok) throw new Error(`Error fetching release data: ${response.status}`);
 
         const data = await response.json();
-        console.log("Test", data.title);
 
         return Date.parse(data.lastUpdate) || 0;
          
