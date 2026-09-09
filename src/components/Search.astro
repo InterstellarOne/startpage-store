@@ -12,11 +12,11 @@ const uniqueTags = Array.from(new Set(tags));
   <search id="search-row-1" class="search-row">
     <input
       type="search"
-      id="theme-search"
+      id="startpage-search"
       placeholder="Search for titles, tags, or keywords"
       class="search-item fredoka-regular"
     />
-    <select id="theme-sort" class="search-item fredoka-regular">
+    <select id="startpage-sort" class="search-item fredoka-regular">
       <option value="latest">Recently Added</option>
       <option value="updated">Recently Updated</option>
       <option value="stars">GitHub Stars</option>
@@ -43,7 +43,13 @@ const uniqueTags = Array.from(new Set(tags));
 </div>
 
 <script>
-  const selectSort = document.getElementById("theme-sort") as HTMLSelectElement;
+  const selectSort = document.getElementById(
+    "startpage-sort",
+  ) as HTMLSelectElement;
+  const search = document.querySelector(
+    "#startpage-search",
+  ) as HTMLInputElement | null;
+  const tags = document.querySelectorAll(".tag");
 
   selectSort?.addEventListener("change", () => {
     window.dispatchEvent(
@@ -52,7 +58,7 @@ const uniqueTags = Array.from(new Set(tags));
   });
 
   const selectSearch = document.getElementById(
-    "theme-search",
+    "startpage-search",
   ) as HTMLSelectElement;
 
   selectSearch?.addEventListener("change", () => {
@@ -73,5 +79,16 @@ const uniqueTags = Array.from(new Set(tags));
         detail: { checked: checkbox.checked },
       }),
     );
+  });
+
+  tags.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      if (search) search.value += " " + tag.textContent;
+      window.dispatchEvent(
+        new CustomEvent("search-changed", {
+          detail: { search: selectSearch.value },
+        }),
+      );
+    });
   });
 </script>

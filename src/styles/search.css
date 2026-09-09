@@ -25,7 +25,7 @@
     z-index: 1000000;
 }
 
-#theme-search, #theme-sort {
+#startpage-search, #startpage-sort {
     border: 2px #e2e2e2 solid;
     background: #fafafa;
     padding: 10px;
@@ -34,15 +34,15 @@
     outline: none;
 }
 
-#theme-search {
+#startpage-search {
     width: 100%;
 }
 
-#theme-search:focus {
+#startpage-search:focus {
     border: 2px #cecece solid;
 }
 
-#theme-sort {
+#startpage-sort {
     background: #fafafa;
     padding: 10px;
     border-radius: 16px;
@@ -69,10 +69,6 @@
 .search-item {
     margin-right: 5px;
 }
-#tag-list {
-    display: none !important;
-}
-
 
 #tag-list {
     overflow-x: scroll;
@@ -88,4 +84,5 @@
 
 .tag {
     flex-shrink: 0;
+    cursor: pointer;
 }
