@@ -4,6 +4,7 @@ A static community gallery showcasing startpages (New Tab pages) from across the
 ### To Do:
 
 - Automate updates and submissions with GitHub Actions
+- Make colourful default colorscheme
 - Add dark theme
 - Add theme switching
 - Fix absolute image paths

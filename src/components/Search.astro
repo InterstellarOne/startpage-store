@@ -83,7 +83,11 @@ const uniqueTags = Array.from(new Set(tags));
 
   tags.forEach((tag) => {
     tag.addEventListener("click", () => {
-      if (search) search.value += " " + tag.textContent;
+      if (search) {
+        search.value == ""
+          ? (search.value = tag.textContent)
+          : (search.value += " " + tag.textContent);
+      }
       window.dispatchEvent(
         new CustomEvent("search-changed", {
           detail: { search: selectSearch.value },
