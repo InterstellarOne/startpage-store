@@ -13,7 +13,9 @@
     align-items: left;
     justify-content: space-between;
     padding: 5px 20px;
-    background-color: #e0e0e0;
+    background-color: #fff;
+    margin: 10px 20px;
+    border-radius: 20px;
 }
 
 #header-title-container {
@@ -45,11 +47,19 @@
 #header-submit {
     display: flex;
     align-items: center;
-    background: #fafafa;
+    background: #f3f3f3;
     padding: 4px;
     padding-left: 8px;
     border-radius: 16px;
     transition: transform 0.2s ease-in-out;
+}
+
+#header-link-github {
+    align-items: center;
+    background: #f3f3f3;
+    width: 42px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 #header-submit:hover,
