@@ -1,7 +1,8 @@
-name: Submit a Theme
+name: Submit
 title: "[Submission]:"
 type: submission
 assignees: github-actions[bot]
+description: Submit a Startpage / New Tab Page
 body:
   - type: markdown
     attributes:
