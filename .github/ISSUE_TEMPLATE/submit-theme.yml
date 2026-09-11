@@ -30,7 +30,7 @@ body:
       description: Upload an screenshot showcasing the startpage. The ideal size is 1280 x 800 with an aspect ratio of 16:10, but images with other aspect ratios will be cropped to fit.
     validations:
       required: true
-      accept: image/png,image/jpeg
+      accept: .png,.jpg,.jpeg
   - type: markdown
     attributes:
       value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
