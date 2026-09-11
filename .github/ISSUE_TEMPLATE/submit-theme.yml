@@ -1,4 +1,4 @@
-name: Sumbit a Theme
+name: Submit a Theme
 title: "[Submission]:"
 type: submission
 assignees: github-actions[bot]
@@ -30,9 +30,10 @@ body:
       description: Upload an screenshot showcasing the startpage. The ideal size is 1280 x 800 with an aspect ratio of 16:10, but images with other aspect ratios will be cropped to fit.
     validations:
       required: true
-      accept: png, jpg, jpeg
+      accept: png,jpg,jpeg
   - type: markdown
-    value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
+    attributes:
+      value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
   - type: input
     id: tag1
     attributes:
@@ -73,12 +74,15 @@ body:
       placeholder: Eighth tag
   - type: checkboxes
     id: opensource
-    description: Is the startpage open source? If it is, please also add a link to the source code below.
-    options:
+    attributes:
       label: Open-source?
-      required: true
+      description: Is the startpage open source? If it is, please also add a link to the source code below.
+      options:
+        - label: This startpage is open source
+          required: true
   - type: markdown
-    value: Add links to where you can find the startpage.
+    attributes:
+      value: Add links to where you can find the startpage.
   - type: input
     id: gitLink
     attributes:
