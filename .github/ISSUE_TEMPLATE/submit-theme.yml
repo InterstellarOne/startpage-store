@@ -55,11 +55,11 @@ body:
     id: tag4
     attributes:
       placeholder: Fourth tag
-        - type: input
+  - type: input
     id: tag5
     attributes:
       placeholder: Fifth tag
-        - type: input
+  - type: input
     id: tag6
     attributes:
       placeholder: Sixth tag
