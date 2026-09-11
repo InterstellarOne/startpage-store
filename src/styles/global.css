@@ -65,15 +65,6 @@
     "wdth" 100;
 }
 
-.fredoka-regular {
-  font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
 .fredoka-medium {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
@@ -83,8 +74,17 @@
     "wdth" 100;
 }
 
-.fredoka-semibold {
-  font-family: "Fredoka", sans-serif;
+.quicksand-regular {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.quicksand-medium {
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -92,10 +92,19 @@
     "wdth" 100;
 }
 
-.fredoka-bold {
-  font-family: "Fredoka", sans-serif;
+.quicksand-semibold {
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.quicksand-bold {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;

@@ -10,7 +10,7 @@ body:
   - type: input
     id: name
     attributes:
-      label: Startpage Name
+      label: Name
       description: The public name of the startpage.
       placeholder: My Awesome Startpage
     validations:
@@ -23,14 +23,80 @@ body:
       placeholder: The description, goes here.
     validations:
       required: true
-  - type: input
-    id: description
-    attributes:
-      label: Description
-      description: A one or two sentence description for the startpage.
-      placeholder: The description, goes here.
-    validations:
-      required: true
   - type: upload
     id: image
-    
+    attributes:
+      label: Cover screenshot
+      description: Upload an screenshot showcasing the startpage. The ideal size is 1280 x 800 with an aspect ratio of 16:10, but images with other aspect ratios will be cropped to fit.
+    validations:
+      required: true
+      accept: png, jpg, jpeg
+  - type: markdown
+    value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
+  - type: input
+    id: tag1
+    attributes:
+      placeholder: First tag
+    validations:
+      required: true
+  - type: input
+    id: tag2
+    attributes:
+      placeholder: Second tag
+    validations:
+      required: true
+  - type: input
+    id: tag3
+    attributes:
+      placeholder: Third tag
+    validations:
+      required: true
+  - type: input
+    id: tag4
+    attributes:
+      placeholder: Fourth tag
+        - type: input
+    id: tag5
+    attributes:
+      placeholder: Fifth tag
+        - type: input
+    id: tag6
+    attributes:
+      placeholder: Sixth tag
+  - type: input
+    id: tag7
+    attributes:
+      placeholder: Seventh tag
+  - type: input
+    id: tag8
+    attributes:
+      placeholder: Eighth tag
+  - type: checkboxes
+    id: opensource
+    description: Is the startpage open source? If it is, please also add a link to the source code below.
+    options:
+      label: Open-source?
+      required: true
+  - type: markdown
+    value: Add links to where you can find the startpage.
+  - type: input
+    id: gitLink
+    attributes:
+      label: Source (Github, Codeberg, or other)
+      placeholder: https://github.com/InterstellarOne/startpage-store
+  - type: input
+    id: website
+    attributes:
+      label: Standalone website for the startpage
+  - type: input
+    id: firefoxLink
+    attributes:
+      label: Firefox Add-ons page
+  - type: input
+    id: chromeLink
+    attributes:
+      label: Chrome Web Store page
+
+  
+  
+  
