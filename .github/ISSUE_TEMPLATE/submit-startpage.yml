@@ -1,8 +1,9 @@
-name: Submit
+name: Submit a Startpage
 title: "[Submission]:"
 type: submission
 assignees: github-actions[bot]
 description: Submit a Startpage / New Tab Page
+labels: submission
 body:
   - type: markdown
     attributes:
@@ -38,52 +39,51 @@ body:
   - type: input
     id: tag1
     attributes:
-      label: First tag
+      label: Tag 1
     validations:
       required: true
   - type: input
     id: tag2
     attributes:
-      label: Second tag
+      label: Tag 2
     validations:
       required: true
   - type: input
     id: tag3
     attributes:
-      label: Third tag
+      label: Tag 3
     validations:
       required: true
   - type: input
     id: tag4
     attributes:
-      label: Fourth tag
+      label: Tag 4
   - type: input
     id: tag5
     attributes:
-      label: Fifth tag
+      label: Tag 5
   - type: input
     id: tag6
     attributes:
-      label: Sixth tag
+      label: Tag 6
   - type: input
     id: tag7
     attributes:
-      label: Seventh tag
+      label: Tag 7
   - type: input
     id: tag8
     attributes:
-      label: Eighth tag
+      label: Tag 8
   - type: checkboxes
     id: opensource
     attributes:
-      label: Open-source?
-      description: Is the startpage open source? If it is, please also add a link to the source code below.
+      label: Liscence type
+      description: Is this startpage open source? If it is, please add a link to the source code below.
       options:
         - label: This startpage is open source
-          required: true
   - type: markdown
     attributes:
-      value: Add links to where you can find the startpage.
+      value: "## Add links to where you can find the startpage."
   - type: input
     id: gitLink
     attributes:
@@ -92,15 +92,16 @@ body:
   - type: input
     id: website
     attributes:
-      label: Standalone website for the startpage
+      label: Standalone website
+      placeholder: https://example.com/
   - type: input
     id: firefoxLink
     attributes:
-      label: Firefox Add-ons page
+      label: Firefox Add-ons
   - type: input
     id: chromeLink
     attributes:
-      label: Chrome Web Store page
+      label: Chrome Web Store
 
   
   
