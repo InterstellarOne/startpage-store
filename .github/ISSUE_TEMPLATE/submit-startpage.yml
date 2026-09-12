@@ -8,6 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
+
         Thanks for submitting a theme! Once filled out, your submission will be automatically processed into a pull request to be manually reviewed.
   - type: input
     id: name
@@ -33,6 +34,9 @@ body:
     validations:
       required: true
       accept: .png,.jpg,.jpeg
+  - type: markdown
+    attributes:
+      value: "#### Tags"
   - type: markdown
     attributes:
       value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
@@ -83,7 +87,7 @@ body:
         - label: This startpage is open source
   - type: markdown
     attributes:
-      value: "## Add links to where you can find the startpage."
+      value: "#### Add links to where you can find the startpage."
   - type: input
     id: gitLink
     attributes:
