@@ -13,15 +13,15 @@ body:
   - type: input
     id: name
     attributes:
-      label: Name
+      label: <Name>
       description: The public name of the startpage.
       placeholder: My Awesome Startpage
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: description
     attributes:
-      label: Description
+      label: <Description>
       description: A one or two sentence description for the startpage.
       placeholder: The description, goes here.
     validations:
@@ -29,7 +29,7 @@ body:
   - type: upload
     id: image
     attributes:
-      label: Cover screenshot
+      label: <Cover screenshot>
       description: Upload an screenshot showcasing the startpage. Please upload an image with an aspect ratio of 16:10. Other aspect ratios will be cropped to fit.
     validations:
       required: true
@@ -39,49 +39,49 @@ body:
       value: "### Tags"
   - type: markdown
     attributes:
-      value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
+      value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors. I suggest checking what tags may already exist before coming up with your own.
   - type: input
     id: tag1
     attributes:
-      label: Tag 1
+      label: <Tag 1>
     validations:
       required: true
   - type: input
     id: tag2
     attributes:
-      label: Tag 2
+      label: <Tag 2>
     validations:
       required: true
   - type: input
     id: tag3
     attributes:
-      label: Tag 3
+      label: <Tag 3>
     validations:
       required: true
   - type: input
     id: tag4
     attributes:
-      label: Tag 4
+      label: <Tag 4>
   - type: input
     id: tag5
     attributes:
-      label: Tag 5
+      label: <Tag 5>
   - type: input
     id: tag6
     attributes:
-      label: Tag 6
+      label: <Tag 6>
   - type: input
     id: tag7
     attributes:
-      label: Tag 7
+      label: <Tag 7>
   - type: input
     id: tag8
     attributes:
-      label: Tag 8
+      label: <Tag 8>
   - type: checkboxes
     id: opensource
     attributes:
-      label: License type
+      label: <License type>
       description: Is this startpage open source? If it is, please also add a link to the source code below.
       options:
         - label: This startpage is open source
@@ -91,23 +91,26 @@ body:
   - type: input
     id: gitLink
     attributes:
-      label: Source (Github, Codeberg, or other)
+      label: <Source (Github, Codeberg, or other)>
       placeholder: https://github.com/InterstellarOne/startpage-store/
   - type: input
     id: website
     attributes:
-      label: Standalone website
+      label: <Standalone website>
       placeholder: https://example.com/
   - type: input
     id: firefoxLink
     attributes:
-      label: Firefox Add-ons
+      label: <Firefox Add-ons>
       placeholder: https://addons.mozilla.org/en-US/firefox/addon/example/
   - type: input
     id: chromeLink
     attributes:
-      label: Chrome Web Store
+      label: <Chrome Web Store>
       placeholder: https://chromewebstore.google.com/detail/example/qwertyuiopasdfghjkl/
-  
-  
+  - type: input
+    id: safariLink
+    attributes:
+      label: <App Store (Safari)>
+      placeholder: https://apps.apple.com/ca/app/detail/example/id1234567890/
   

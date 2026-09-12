@@ -1,12 +1,13 @@
-name: Update JSON files weekly
+name: Validate submission and create new JSON entry for it
 
 on: 
-    schedule:
-        - cron: "0 0 * * 0"
+    issues:
+      types: [opened]
 
 jobs:
-    update_dates:
-        name: Update Dates & Stars
+    create-json:
+        if: contains(github.event.issue.labels.*.name, 'automation-trigger')
+
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -18,16 +19,18 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: 24
+            - name: Run Issue form parser
+              id: parse
+              uses: peter-murray/issue-forms-body-parser@v4.0.0
+              with:
+                issue_id: ${{ github.event.issue.number }}
+                separator: '###'
+                label_marker_start: '<'
+                label_marker_end: '>'
 
-            - name: Update Json Files
+            - name: Show parsed data JSON
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                CHROME_STATS_API_KEY: ${{ secrets.CHROME_STATS }}
-              run: node src/scripts/update-JSON.mjs
-
-            - name: Commit and push changes
+                parsed_data: ${{ steps.parse.outputs.payload }}
               run: |
-                git config --global user.name 'github-actions[bot]'
-                git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-                git add src/content/startpages/
-                git diff-index --quiet HEAD || (git commit -m "chore: automated weekly updates" && git push)
+                echo "$parsed_data"
+

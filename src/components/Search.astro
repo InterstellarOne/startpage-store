@@ -61,7 +61,7 @@ const uniqueTags = Array.from(new Set(tags));
     "startpage-search",
   ) as HTMLSelectElement;
 
-  selectSearch?.addEventListener("change", () => {
+  selectSearch?.addEventListener("input", () => {
     window.dispatchEvent(
       new CustomEvent("search-changed", {
         detail: { search: selectSearch.value },
