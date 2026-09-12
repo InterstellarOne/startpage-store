@@ -35,6 +35,12 @@ async function getREST(url, platform) {
             case "firefox": 
                 stars = 0;
                 lastUpdated = Date.parse(data.last_updated);
+                break;
+            case "safari":
+                const safariData = data.results?.[0];
+                stars = 0;
+                lastUpdated = Date.parse(safariData.currentVersionReleaseDate);
+                break;
         }
 
         return [stars, lastUpdated]
@@ -131,7 +137,9 @@ for (const file of files) {
         }
     } else if (content.firefoxLink) {
         const url = new URL(content.firefoxLink);
-        const segments = url.pathname.split("/")
+        // Sorry im alergic to regex
+        const pathname = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
+        const segments = pathname.split("/")
         const urlPath = segments[segments.length - 1];
         urlPart = "api/v5/addons/addon/" + urlPath;
         endpoint = new URL(
@@ -142,9 +150,22 @@ for (const file of files) {
         data = await getREST(endpoint, "firefox");
         newDate = data[1];
 
+    } else if (content.safariLink) { 
+        const url = new URL(content.safariLink);
+        const pathname = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
+        const segments = pathname.split("/")
+        const urlPath = segments[segments.length - 1].slice(2);
+        urlPart = "lookup?id=" + urlPath;
+        endpoint = new URL(
+            urlPart,
+            "https://itunes.apple.com/"
+        ).href;
+
+        newDate = await getREST(endpoint, "safari");
     } else if (content.chromeLink) {
         const url = new URL(content.chromeLink);
-        const segments = url.pathname.split("/")
+        const pathname = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
+        const segments = pathname.split("/")
         const urlPath = segments[segments.length - 1];
         urlPart = "api/detail?id=" + urlPath;
         endpoint = new URL(
@@ -153,6 +174,8 @@ for (const file of files) {
         )
 
         newDate = await getChromeREST(endpoint);
+    } else {
+        console.error("Cannot parse file", content.title)
     }
 
     if (newStars > curStars && content.stars !== undefined) {

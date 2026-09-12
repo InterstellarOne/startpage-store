@@ -87,12 +87,12 @@ body:
         - label: This startpage is open source
   - type: markdown
     attributes:
-      value: "#### Add links to where you can find the startpage."
+      value: "### Add links to where you can find the startpage." 
   - type: input
     id: gitLink
     attributes:
       label: Source (Github, Codeberg, or other)
-      placeholder: https://github.com/InterstellarOne/startpage-store
+      placeholder: https://github.com/InterstellarOne/startpage-store/
   - type: input
     id: website
     attributes:
@@ -107,7 +107,7 @@ body:
     id: chromeLink
     attributes:
       label: Chrome Web Store
-      placeholder: https://chromewebstore.google.com/detail/example/qwertyuiopasdfghjkl
+      placeholder: https://chromewebstore.google.com/detail/example/qwertyuiopasdfghjkl/
   
   
   

@@ -1,0 +1,33 @@
+name: Update JSON files weekly
+
+on: 
+    schedule:
+        - cron: "0 0 * * 0"
+
+jobs:
+    update_dates:
+        name: Update Dates & Stars
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24
+
+            - name: Update Json Files
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                CHROME_STATS_API_KEY: ${{ secrets.CHROME_STATS }}
+              run: node src/scripts/update-JSON.mjs
+
+            - name: Commit and push changes
+              run: |
+                git config --global user.name 'github-actions[bot]'
+                git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+                git add src/content/startpages/
+                git diff-index --quiet HEAD || (git commit -m "chore: automated weekly updates" && git push)
