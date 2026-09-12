@@ -31,6 +31,7 @@ body:
     attributes:
       label: Cover screenshot
       description: Upload an screenshot showcasing the startpage. Please upload an image with an aspect ratio of 16:10. Other aspect ratios will be cropped to fit.
+    validations:
       required: true
       accept: .png,.jpg,.jpeg
   - type: markdown
