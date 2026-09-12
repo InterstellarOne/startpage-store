@@ -30,13 +30,12 @@ body:
     id: image
     attributes:
       label: Cover screenshot
-      description: Upload an screenshot showcasing the startpage. The ideal size is 1280 x 800 with an aspect ratio of 16:10, but images with other aspect ratios will be cropped to fit.
-    validations:
+      description: Upload an screenshot showcasing the startpage. Please upload an image with an aspect ratio of 16:10. Other aspect ratios will be cropped to fit.
       required: true
       accept: .png,.jpg,.jpeg
   - type: markdown
     attributes:
-      value: "#### Tags"
+      value: "### Tags"
   - type: markdown
     attributes:
       value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors.
