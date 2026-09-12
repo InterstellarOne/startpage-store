@@ -111,6 +111,6 @@ body:
   - type: input
     id: safariLink
     attributes:
-      label: "((App Store (Safari))")
+      label: "((App Store (Safari)))"
       placeholder: https://apps.apple.com/ca/app/detail/example/id1234567890/
   
