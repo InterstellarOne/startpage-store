@@ -91,7 +91,7 @@ body:
   - type: input
     id: gitLink
     attributes:
-      label: "<Source (Github, Codeberg, or other>)"
+      label: "<Source (Github, Codeberg, or other)>"
       placeholder: https://github.com/InterstellarOne/startpage-store/
   - type: input
     id: website
@@ -111,7 +111,7 @@ body:
   - type: input
     id: safariLink
     attributes:
-      label: "<App Store (Safari>)"
+      label: "<App Store (Safari)>"
       placeholder: https://apps.apple.com/ca/app/detail/example/id1234567890/
   - type: markdown
     attributes:
