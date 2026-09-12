@@ -2,11 +2,11 @@ name: Validate submission and create new JSON entry for it
 
 on: 
     issues:
-      types: [opened]
+      types: [opened, labeled]
 
 jobs:
     create-json:
-        if: contains(github.event.issue.labels.*.name, 'automation-trigger')
+        if: contains(github.event.issue.labels.*.name, 'submission')
 
         runs-on: ubuntu-latest
         permissions:

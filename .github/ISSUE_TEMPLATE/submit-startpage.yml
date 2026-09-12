@@ -1,5 +1,5 @@
 name: Submit a Startpage
-title: "[Submission]:"
+title: "[Submission]: {WRITE STARTPAGE NAME HERE}"
 type: submission
 assignees: github-actions[bot]
 description: Submit a Startpage / New Tab Page
@@ -18,7 +18,7 @@ body:
       placeholder: My Awesome Startpage
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: description
     attributes:
       label: ((Description))
