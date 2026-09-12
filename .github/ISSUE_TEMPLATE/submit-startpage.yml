@@ -80,8 +80,8 @@ body:
   - type: checkboxes
     id: opensource
     attributes:
-      label: Liscence type
-      description: Is this startpage open source? If it is, please add a link to the source code below.
+      label: License type
+      description: Is this startpage open source? If it is, please also add a link to the source code below.
       options:
         - label: This startpage is open source
   - type: markdown
@@ -101,11 +101,12 @@ body:
     id: firefoxLink
     attributes:
       label: Firefox Add-ons
+      placeholder: https://addons.mozilla.org/en-US/firefox/addon/example/
   - type: input
     id: chromeLink
     attributes:
       label: Chrome Web Store
-
+      placeholder: https://chromewebstore.google.com/detail/example/qwertyuiopasdfghjkl
   
   
   
