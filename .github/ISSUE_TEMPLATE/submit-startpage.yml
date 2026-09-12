@@ -43,45 +43,45 @@ body:
   - type: input
     id: tag1
     attributes:
-      label: "<1>"
+      label: "((1))"
     validations:
       required: true
   - type: input
     id: tag2
     attributes:
-      label: "<2>"
+      label: "((2))"
     validations:
       required: true
   - type: input
     id: tag3
     attributes:
-      label: "<3>"
+      label: "((3))"
     validations:
       required: true
   - type: input
     id: tag4
     attributes:
-      label: "<4>"
+      label: "((4))"
   - type: input
     id: tag5
     attributes:
-      label: "<5>"
+      label: "((5))"
   - type: input
     id: tag6
     attributes:
-      label: "<6>"
+      label: "((6))"
   - type: input
     id: tag7
     attributes:
-      label: "<7>"
+      label: "((7))"
   - type: input
     id: tag8
     attributes:
-      label: "<8>"
+      label: "((8))"
   - type: checkboxes
     id: opensource
     attributes:
-      label: "<License type>"
+      label: "((License type))"
       description: Is this startpage open source? If it is, please also add a link to the source code below.
       options:
         - label: This startpage is open source
@@ -91,27 +91,27 @@ body:
   - type: input
     id: gitLink
     attributes:
-      label: "<Source (Github, Codeberg, or other)>"
+      label: "((Source (Github, Codeberg, or other)))"
       placeholder: https://github.com/InterstellarOne/startpage-store/
   - type: input
     id: website
     attributes:
-      label: "<Standalone website>"
+      label: "((Standalone website))"
       placeholder: https://example.com/
   - type: input
     id: firefoxLink
     attributes:
-      label: "<Firefox Add-ons>"
+      label: "((Firefox Add-ons))"
       placeholder: https://addons.mozilla.org/en-US/firefox/addon/example/
   - type: input
     id: chromeLink
     attributes:
-      label: "<Chrome Web Store>"
+      label: "((Chrome Web Store))"
       placeholder: https://chromewebstore.google.com/detail/example/qwertyuiopasdfghjkl/
   - type: input
     id: safariLink
     attributes:
-      label: "<App Store (Safari)>"
+      label: "((App Store (Safari)))"
       placeholder: https://apps.apple.com/ca/app/detail/example/id1234567890/
   - type: markdown
     attributes:
