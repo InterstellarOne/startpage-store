@@ -91,7 +91,7 @@ body:
   - type: input
     id: gitLink
     attributes:
-      label: "((Source (Github, Codeberg, or other))")
+      label: "((Source (Github, Codeberg, or other)))"
       placeholder: https://github.com/InterstellarOne/startpage-store/
   - type: input
     id: website
