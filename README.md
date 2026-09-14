@@ -7,4 +7,4 @@ A static community gallery showcasing startpages (New Tab pages) from across the
 - Make colourful default colorscheme
 - Add dark theme
 - Add theme switching
-- Fix absolute image paths
+- ~~Fix absolute image paths~~
