@@ -37,9 +37,8 @@ async function getREST(url, platform) {
                 lastUpdated = Date.parse(data.last_updated);
                 break;
             case "safari":
-                const safariData = data.results?.[0];
                 stars = 0;
-                lastUpdated = Date.parse(safariData.currentVersionReleaseDate);
+                lastUpdated = Date.parse(data.results?.[0].currentVersionReleaseDate);
                 break;
         }
 
@@ -137,7 +136,6 @@ for (const file of files) {
         }
     } else if (content.firefoxLink) {
         const url = new URL(content.firefoxLink);
-        // Sorry im alergic to regex
         const pathname = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
         const segments = pathname.split("/")
         const urlPath = segments[segments.length - 1];
