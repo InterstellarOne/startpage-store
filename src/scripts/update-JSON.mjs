@@ -176,7 +176,7 @@ for (const file of files) {
         console.error("Cannot parse file", content.title)
     }
 
-    if (newStars > curStars && content.stars !== undefined) {
+    if (newStars != curStars && content.stars !== undefined) {
         content.stars = newStars;
         console.log("Updated star count of", content.title)
     } else if (content.stars == undefined){

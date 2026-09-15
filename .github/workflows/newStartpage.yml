@@ -26,7 +26,7 @@ jobs:
                 issue_id: ${{ github.event.issue.number }}
                 separator: '###'
                 label_marker_start: ' (('
-                label_marker_end: '))\n'
+                label_marker_end: '))'
 
             - name: Show parsed data JSON
               env:
