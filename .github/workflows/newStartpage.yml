@@ -19,15 +19,11 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: 24
-            - name: Run Issue form parser
+            - name: Parse issue
               id: parse
-              uses: peter-murray/issue-forms-body-parser@v4.0.0
+              uses: onmax/issue-form-parser@v1.6
               with:
-                issue_id: ${{ github.event.issue.number }}
-                separator: '###'
-                label_marker_start: ' (('
-                label_marker_end: "))\n"
-
+                issue_number: ${{ github.event.issue.number }}
             - name: Show parsed data JSON
               env:
                 parsed_data: ${{ steps.parse.outputs.payload }}
