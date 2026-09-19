@@ -61,21 +61,24 @@ if (data["Standalone website"].includes("https://")) {
 
 let firefoxLink;
 if (data["Firefox Add-ons"].includes("https://addons.mozilla.org/")) {
-    firefoxLink = data["Firefox Add-ons"];
+    const url = new URL(data["Firefox Add-ons"]);
+    firefoxLink = url.origin + url.pathname;
 } else {
     console.log("Firefox link invalid or not submitted.");
 }
 
 let chromeLink;
 if (data["Chrome Web Store"].includes("https://chromewebstore.google.com/detail/")) {
-    chromeLink = data["Chrome Web Store"];
+    const url = new URL(data["Chrome Web Store"]);
+    chromeLink = url.origin + url.pathname;
 } else {
     console.log("Chrome link invalid or not submitted.");
 }
 
 let safariLink;
 if (data["App Store (Safari)"].includes("https://apps.apple.com/")) {
-    safariLink = data["App Store (Safari)"];
+    const url = new URL(data["App Store (Safari)"]);
+    safariLink = url.origin + url.pathname;    
 } else {
     console.log("Safari link invalid or not submitted.");
 }
@@ -253,7 +256,7 @@ const newJSONObject = {
     "title": title,
     "description": description,
     "image": {
-        "src": toString(screenshot)
+        "src": screenshot
     },
     "tags": tags,
     "dateAdded": dateAdded,
