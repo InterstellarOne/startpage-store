@@ -159,6 +159,11 @@ if (gitLink && gitLink.includes("github.com") || gitLink.includes("codeberg.org"
     const url = new URL(gitLink);
     const urlPath = url.pathname.slice(1);
 
+    let urlPart = "";
+    let endpoint = "";
+    let data = [];
+
+
     switch(url.hostname) {
         case "github.com" :
             urlPart = "repos/" + urlPath;
