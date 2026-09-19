@@ -72,7 +72,7 @@ async function getChromeREST(url) {
          
     } catch (error) {
         console.error("Error:", error);
-        return [0, 0];
+        return 0;
     }
 }                
 

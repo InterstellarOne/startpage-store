@@ -11,6 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: write
+            pull-requests: write
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -28,5 +29,18 @@ jobs:
               env:
                 parsed_data: ${{ steps.parse.outputs.payload }}
                 issue_number: ${{ github.event.issue.number }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                CHROME_STATS_API_KEY: ${{ secrets.CHROME_STATS }}
               run: node src/scripts/new-JSON.mjs
+            - name: Create Pull Request
+              uses: peter-evans/create-pull-request@v6
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                commit-message: "create new startpage entry"
+                committer: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+                author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+                branch: "add-startpage-${{ github.run_id }}"
+                title: "New Startpage ${{github.event.issue.title}} Added"
+                add-paths: |
+                  src/content/startpages/
 

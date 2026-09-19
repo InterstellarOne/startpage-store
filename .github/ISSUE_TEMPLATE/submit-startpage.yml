@@ -1,5 +1,5 @@
 name: Submit a Startpage
-title: "[Submission]: {WRITE STARTPAGE NAME HERE}"
+title: "{WRITE STARTPAGE NAME HERE}"
 type: submission
 assignees: github-actions[bot]
 description: Submit a Startpage / New Tab Page
