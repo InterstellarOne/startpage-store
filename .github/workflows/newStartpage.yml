@@ -2,7 +2,7 @@ name: Validate submission and create new JSON entry for it
 
 on: 
     issues:
-      types: [opened]
+      types: [opened, labeled]
 
 jobs:
     create-json:
