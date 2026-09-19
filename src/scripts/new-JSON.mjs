@@ -8,7 +8,7 @@ const chromeStatsKey = process.env.CHROME_STATS_API_KEY;
 if (!data) console.error(`Data from issue ${process.env.issue_number} failed to parse`);
 
 // Title and Description
-const title = data["Title"];
+const title = data["Name"];
 const description = Array.isArray(data["Description"]) ? data["Description"].join(", ") : data["Description"];
 
 // Tags
@@ -270,7 +270,7 @@ if (typeof stars === 'number') newJSONObject.stars = stars;
 
 function createFile(data) {
     while (true) {
-        const fileName = format(data.title.toLowerCase()) + (Math.floor(Math.random() * 9000) + 1000) + ".json";
+        const fileName = format(title.toLowerCase()) + (Math.floor(Math.random() * 9000) + 1000) + ".json";
         const filePath = path.resolve(targetDir, fileName);
 
         if (!fs.existsSync(filePath)) {
