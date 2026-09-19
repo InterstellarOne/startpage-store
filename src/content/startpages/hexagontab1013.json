@@ -1,0 +1,23 @@
+{
+  "title": "hexagonTab",
+  "description": "Hexagon bookmarks accented with a chosen colour. Customise the layout, style, background and bookmarks with hexagonTab.",
+  "image": {
+    "src": [
+      "(https://github.com/user-attachments/assets/141a8821-d7bb-40a4-bf5f-2dc9dcbfb3b3)"
+    ]
+  },
+  "tags": [
+    "Customizable",
+    "Themes",
+    "Wallpaper",
+    "Bookmarks",
+    "Modular"
+  ],
+  "dateAdded": 1789834953892,
+  "proprietary": false,
+  "dateUpdated": 1718366156000,
+  "gitLink": "https://github.com/zombieFox/hexagonTab",
+  "firefoxLink": "https://addons.mozilla.org/en-GB/firefox/addon/hexagontab/",
+  "chromeLink": "https://chromewebstore.google.com/detail/hexagontab/hjapnkiokjkamfjenbdagacmpkobjlgi",
+  "websiteLink": "https://zombiefox.github.io/hexagonTab/"
+}
