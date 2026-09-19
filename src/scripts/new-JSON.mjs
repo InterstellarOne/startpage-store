@@ -226,7 +226,6 @@ if (gitLink && gitLink.includes("github.com") || gitLink.includes("codeberg.org"
         urlPart,
         "https://itunes.apple.com/"
     ).href;
-firefoxLink
     data = await getREST(endpoint, "safari");
     if (data) {dateUpdated = data;}
 
@@ -238,8 +237,8 @@ firefoxLink
     urlPart = "api/detail?id=" + urlPath;
     endpoint = new URL(
         urlPart,
-        "https://chrome-stats.com/"pages-
-    )
+        "https://chrome-stats.com/"
+    ).href
 
     data = await getChromeREST(endpoint);
     if (data) {dateUpdated = data;}

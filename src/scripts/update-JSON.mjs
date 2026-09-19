@@ -169,7 +169,7 @@ for (const file of files) {
         endpoint = new URL(
             urlPart,
             "https://chrome-stats.com/"
-        )
+        ).href
 
         newDate = await getChromeREST(endpoint);
     } else {
