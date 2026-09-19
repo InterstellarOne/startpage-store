@@ -87,7 +87,7 @@ body:
         - label: This startpage is open source
   - type: markdown
     attributes:
-      value: "## Add links to where you can find the startpage." 
+      value: "## Add links to where you can find the startpage. Include the full link including 'https://'" 
   - type: input
     id: gitLink
     attributes:
@@ -113,6 +113,3 @@ body:
     attributes:
       label: "App Store (Safari)"
       placeholder: https://apps.apple.com/ca/app/detail/example/id1234567890/
-  - type: markdown
-    attributes:
-      value: "---"

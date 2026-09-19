@@ -24,9 +24,9 @@ jobs:
               uses: onmax/issue-form-parser@v1.6
               with:
                 issue_number: ${{ github.event.issue.number }}
-            - name: Show parsed data JSON
+            - name: Validate data and create new JSON
               env:
                 parsed_data: ${{ steps.parse.outputs.payload }}
-              run: |
-                echo "$parsed_data"
+                issue_number: ${{ github.event.issue.number }}
+              run: node src/scripts/new-JSON.mjs
 
