@@ -273,7 +273,7 @@ if (typeof stars === 'number') newJSONObject.stars = stars;
 
 function createFile(data) {
     while (true) {
-        const fileName = format(title.toLowerCase().replace(" ","-")) + (Math.floor(Math.random() * 9000) + 1000) + ".json";
+        const fileName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + ".json";
         const filePath = path.resolve(targetDir, fileName);
 
         if (!fs.existsSync(filePath)) {
