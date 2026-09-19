@@ -39,7 +39,7 @@ body:
       value: "## Tags"
   - type: markdown
     attributes:
-      value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors. If a tag already exists that describes the same thing that your tag describes, use that tag instead.
+      value: Add between three and eight tags, one tag per input. Tags should be short, describe a particular feature or design choice, and should not include names or authors. I suggest checking what tags may already exist before coming up with your own, and avoid making a new tag if something similar already exists.
   - type: input
     id: tag1
     attributes:

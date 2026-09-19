@@ -269,7 +269,7 @@ if (firefoxLink) newJSONObject.firefoxLink = firefoxLink;
 if (chromeLink) newJSONObject.chromeLink = chromeLink;
 if (websiteLink) newJSONObject.websiteLink = websiteLink;
 if (safariLink) newJSONObject.safariLink = safariLink;
-if (typeof stars === 'number') newJSONObject.stars = stars;
+if (typeof starCount === 'number') newJSONObject.stars = starCount;
 
 function createFile(data) {
     while (true) {
