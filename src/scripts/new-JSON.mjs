@@ -279,5 +279,5 @@ function createFile(data) {
     }
 }
 
-confirmedFilePath = createFile(newJSONObject);
+const confirmedFilePath = createFile(newJSONObject);
 fs.writeFileSync(confirmedFilePath, JSON.stringify(newJSONObject, null, 2));
