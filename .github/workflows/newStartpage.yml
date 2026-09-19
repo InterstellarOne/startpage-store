@@ -41,6 +41,7 @@ jobs:
                 author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
                 branch: "add-startpage-${{ github.run_id }}"
                 title: "New Startpage ${{github.event.issue.title}} Added"
+                body: "Uses #${{ github.event.issue.number }}"
                 add-paths: |
                   src/content/startpages/
 
