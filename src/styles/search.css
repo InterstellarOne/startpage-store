@@ -97,10 +97,42 @@
     position: absolute;
     right: 8px;
     top: 8px;
-    background: none;
+    background: #FAFAFA;
     width: 30px;
     height: 30px;
     border: none;
     color: #555;
     cursor: pointer;
+}
+
+#collapse-btn {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    width: 32px;
+    height: 28px;
+    background: #e8e8e8;
+    border: 1.5px solid #bebebe;
+    border-radius: 40%;
+    cursor: pointer;
+}
+
+#collapse-btn svg {
+    margin: auto;
+    margin-top: 1px;
+    color: #555;
+}
+
+.lucide-chevrons-up-down {
+    display: none;
+}
+
+@media (max-width: 600px) {
+   #search-row-2 {
+    flex-direction: column !important;
+}
+
+#tag-list {
+    margin-left: 0px;
+}
 }

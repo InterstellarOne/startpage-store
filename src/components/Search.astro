@@ -60,6 +60,36 @@ const uniqueTags = Array.from(new Set(tags));
       {uniqueTags.map((uniqueTags) => <span class="tag">{uniqueTags}</span>)}
     </div>
   </div>
+  <button id="collapse-btn" type="button">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-chevrons-down-up preview-icon"
+      id="collapse-icon"
+      ><path d="m7 20 5-5 5 5"></path><path d="m7 4 5 5 5-5"></path></svg
+    >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-chevrons-up-down preview-icon"
+      id="expand-icon"
+      ><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg
+    >
+  </button>
 </div>
 
 <script>
@@ -110,6 +140,27 @@ const uniqueTags = Array.from(new Set(tags));
         detail: { checked: checkbox.checked },
       }),
     );
+  });
+
+  const selectCollapse = document.getElementById("collapse-btn") as HTMLElement;
+  const searchRow2 = document.getElementById("search-row-2") as HTMLElement;
+  const collapseIcon = document.getElementById("collapse-icon") as HTMLElement;
+  const expandIcon = document.getElementById("expand-icon") as HTMLElement;
+
+  selectCollapse?.addEventListener("click", () => {
+    if (searchRow2.style.display == "flex") {
+      searchRow2.style.display = "none";
+      collapseIcon.style.display = "none";
+      expandIcon.style.display = "inline";
+    } else if (searchRow2.style.display == "none") {
+      searchRow2.style.display = "flex";
+      collapseIcon.style.display = "inline";
+      expandIcon.style.display = "none";
+    } else {
+      searchRow2.style.display = "none";
+      collapseIcon.style.display = "none";
+      expandIcon.style.display = "inline";
+    }
   });
 
   tags.forEach((tag) => {

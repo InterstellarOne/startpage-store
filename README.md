@@ -5,7 +5,7 @@ A static community gallery showcasing startpages (New Tab pages) from across the
 
 - [ ] Add colorschemes
 - [ ] Style blink scrollbars
-- [ ] Make tag div collapsible
+- [x] Make tag div collapsible
 - [ ] Fix mobile layout
 - [ ] Write better README
 - [ ] Add Kofi
