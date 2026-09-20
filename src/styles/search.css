@@ -87,3 +87,20 @@
     flex-shrink: 0;
     cursor: pointer;
 }
+
+#search-wrapper {
+    width: 100%;
+    position: relative
+}
+
+#search-x {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: none;
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: #555;
+    cursor: pointer;
+}

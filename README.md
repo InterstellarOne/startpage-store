@@ -9,3 +9,4 @@ A static community gallery showcasing startpages (New Tab pages) from across the
 - [ ] Fix mobile layout
 - [ ] Write better README
 - [ ] Add Kofi
+- [ ] Write comments for search algorithm

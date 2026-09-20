@@ -1,4 +1,4 @@
-name: Validate submission and create new JSON entry for it
+name: Validate submission and create new entry
 
 on: 
     issues:

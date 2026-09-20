@@ -10,12 +10,32 @@ const uniqueTags = Array.from(new Set(tags));
 
 <div id="search">
   <search id="search-row-1" class="search-row">
-    <input
-      type="search"
-      id="startpage-search"
-      placeholder="Search for titles, tags, or keywords"
-      class="search-item quicksand-regular"
-    />
+    <div id="search-wrapper">
+      <input
+        type="search"
+        id="startpage-search"
+        placeholder="Search for titles, tags, or keywords"
+        class="search-item quicksand-regular"
+      />
+      <button id="search-x" type="button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
     <select id="startpage-sort" class="search-item quicksand-regular">
       <option value="latest">Recently Added</option>
       <option value="updated">Recently Updated</option>
@@ -62,6 +82,17 @@ const uniqueTags = Array.from(new Set(tags));
   ) as HTMLSelectElement;
 
   selectSearch?.addEventListener("input", () => {
+    window.dispatchEvent(
+      new CustomEvent("search-changed", {
+        detail: { search: selectSearch.value },
+      }),
+    );
+  });
+
+  const selectX = document.getElementById("search-x") as HTMLSelectElement;
+
+  selectX?.addEventListener("click", () => {
+    selectSearch.value = "";
     window.dispatchEvent(
       new CustomEvent("search-changed", {
         detail: { search: selectSearch.value },
