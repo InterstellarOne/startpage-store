@@ -68,7 +68,7 @@ let fileName;
 
 function createImagePath(extension) {
     while (true) {
-        fileName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000);
+        fileName = format(title.toLowerCase()).replaceAll(" ","-")+ (Math.floor(Math.random() * 9000) + 1000);
         const imageName = fileName + extension;
         const imagePath = path.resolve(imageDir, imageName);
 
