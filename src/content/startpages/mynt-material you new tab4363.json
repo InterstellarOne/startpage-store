@@ -1,0 +1,25 @@
+{
+  "title": "MYNT: Material You New Tab",
+  "description": "MYNT: Material You New Tab is a customizable browser extension that transforms your new tab into a stylish, modern dashboard inspired by Google's Material You design. It includes advanced personalization features, productivity tools, and seamless integrations—all accessible in one clean, user-friendly layout.",
+  "image": {
+    "src": "screenshots/mynt-material you new tab4363.png"
+  },
+  "tags": [
+    "Themes",
+    "Material You",
+    "Bookmarks",
+    "Wallpaper",
+    "Random Wallpaper",
+    "Widgets",
+    "AI",
+    "Bookmarks"
+  ],
+  "dateAdded": 1789914028625,
+  "proprietary": false,
+  "dateUpdated": 1789322734000,
+  "gitLink": "https://github.com/prem-k-r/materialYouNewTab",
+  "firefoxLink": "https://addons.mozilla.org/en-US/firefox/addon/mynt/",
+  "chromeLink": "https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl",
+  "websiteLink": "https://prem-k-r.github.io/MaterialYouNewTab",
+  "stars": 735
+}
