@@ -45,29 +45,31 @@ async function downloadImage(url) {
     const response = await fetch(url)
 
     if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     if (!response.body) {
-        throw new Error('Response has no body')
+        throw new Error('Response has no body');
     }
 
     const contentType = response.headers.get('content-type');
     const extension = MIME_MAP[contentType];
-
     const filePath = createImagePath(extension);
 
     await pipeline(
         Readable.fromWeb(response.body),
         createWriteStream(filePath)
-    )
+    );
 
-    return filePath
+    return filePath;
 }
+
+let fileName;
 
 function createImagePath(extension) {
     while (true) {
-        const imageName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + extension;
+        fileName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000);
+        const imageName = fileName + extension;
         const imagePath = path.resolve(imageDir, imageName);
 
         if (!fs.existsSync(imagePath)) {
@@ -322,8 +324,8 @@ if (typeof starCount === 'number') newJSONObject.stars = starCount;
 
 function createFile() {
     while (true) {
-        const fileName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + ".json";
-        const filePath = path.resolve(targetDir, fileName);
+        const outputName = fileName + ".json";
+        const filePath = path.resolve(targetDir, outputName);
 
         if (!fs.existsSync(filePath)) {
             return filePath;
