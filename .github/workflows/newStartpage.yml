@@ -44,4 +44,5 @@ jobs:
                 body: "Closes #${{ github.event.issue.number }}"
                 add-paths: |
                   src/content/startpages/
+                  public/screenshots/
 

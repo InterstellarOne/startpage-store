@@ -1,7 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { createWriteStream } from 'node:fs'
+import { pipeline } from 'node:stream/promises'
+import { Readable } from 'node:stream'
 
 const targetDir = "src/content/startpages";
+const imageDir = "public/screenshots"
 const data = JSON.parse(process.env.parsed_data);
 const chromeStatsKey = process.env.CHROME_STATS_API_KEY;
 
@@ -29,10 +33,57 @@ for (let i = 1; i < 9; i++) {
 }
 
 // Cover
+// https://flaviocopes.com/how-to-download-an-image-from-url-in-node/
+
+async function downloadImage(url, filePath) {
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+  }
+
+  if (!response.body) {
+    throw new Error('Response has no body')
+  }
+
+  await pipeline(
+    Readable.fromWeb(response.body),
+    createWriteStream(filePath)
+  )
+
+  return filePath
+}
+
+function createImagePath() {
+    const MIME_MAP = {
+    'image/png': '.png',
+    'image/jpeg': '.jpg',
+    'image/jpg': '.jpg',
+    };
+
+    const contentType = response.headers.get('content-type');
+    const extension = MIME_MAP[contentType];
+
+    while (true) {
+        const imageName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + extension;
+        const imagePath = path.resolve(imageDir, imageName);
+
+        if (!fs.existsSync(imagePath)) {
+            return imagePath;
+        }
+    }
+}
+
 const screenshots = data["Cover screenshot"];
 const match = screenshots.match(/\((.*?)\)/);
 const screenshot = match[1];
 if (screenshots.includes("\n")) console.log("Multiple screenshots were uploaded so only the first one has been added.");
+const imagePath = createImagePath();
+const imageFilePath = downloadImage(screenshot, imagePath);
+
+
+await downloadImage('https://flaviocopes.com/img/og.png', './og.png')
+
 
 // License 
 const proprietary = !data["License type"]["This startpage is open source"];
@@ -256,7 +307,7 @@ const newJSONObject = {
     "title": title,
     "description": description,
     "image": {
-        "src": screenshot
+        "src": imageFilePath
     },
     "tags": tags,
     "dateAdded": dateAdded,
@@ -271,7 +322,7 @@ if (websiteLink) newJSONObject.websiteLink = websiteLink;
 if (safariLink) newJSONObject.safariLink = safariLink;
 if (typeof starCount === 'number') newJSONObject.stars = starCount;
 
-function createFile(data) {
+function createFile() {
     while (true) {
         const fileName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + ".json";
         const filePath = path.resolve(targetDir, fileName);
