@@ -35,6 +35,14 @@ for (let i = 1; i < 9; i++) {
 // Cover
 // https://flaviocopes.com/how-to-download-an-image-from-url-in-node/
 
+    const MIME_MAP = {
+    'image/png': '.png',
+    'image/jpeg': '.jpg',
+    'image/jpg': '.jpg',
+    };
+
+    let extension;
+
 async function downloadImage(url, filePath) {
   const response = await fetch(url)
 
@@ -46,6 +54,9 @@ async function downloadImage(url, filePath) {
     throw new Error('Response has no body')
   }
 
+    const contentType = response.headers.get('content-type');
+    extension = MIME_MAP[contentType];
+
   await pipeline(
     Readable.fromWeb(response.body),
     createWriteStream(filePath)
@@ -55,14 +66,7 @@ async function downloadImage(url, filePath) {
 }
 
 function createImagePath() {
-    const MIME_MAP = {
-    'image/png': '.png',
-    'image/jpeg': '.jpg',
-    'image/jpg': '.jpg',
-    };
 
-    const contentType = response.headers.get('content-type');
-    const extension = MIME_MAP[contentType];
 
     while (true) {
         const imageName = format(title.toLowerCase()).replace(" ","-")+ (Math.floor(Math.random() * 9000) + 1000) + extension;
