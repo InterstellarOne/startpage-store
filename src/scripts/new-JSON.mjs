@@ -53,7 +53,7 @@ async function downloadImage(url) {
     }
 
     const contentType = response.headers.get('content-type');
-    extension = MIME_MAP[contentType];
+    const extension = MIME_MAP[contentType];
 
     const filePath = createImagePath(extension);
 
