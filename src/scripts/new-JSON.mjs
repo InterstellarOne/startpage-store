@@ -83,11 +83,7 @@ const match = screenshots.match(/\((.*?)\)/);
 const screenshot = match[1];
 if (screenshots.includes("\n")) console.log("Multiple screenshots were uploaded so only the first one has been added.");
 const imagePath = createImagePath();
-const imageFilePath = downloadImage(screenshot, imagePath);
-
-
-await downloadImage('https://flaviocopes.com/img/og.png', './og.png')
-
+const imageFilePath = await downloadImage(screenshot, imagePath);
 
 // License 
 const proprietary = !data["License type"]["This startpage is open source"];
