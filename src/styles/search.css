@@ -14,7 +14,7 @@
     flex-direction: row;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 560px) {
     #search-row-1 {
         flex-direction: column;
     }
@@ -107,14 +107,15 @@
 
 #collapse-btn {
     position: absolute;
-    left: 20px;
-    bottom: -16px;
-    width: 32px;
-    height: 28px;
-    background: #e8e8e8;
+    left: 50%;
+    bottom: -10px;
+    width: 42px;
+    height: 24px;
+    background: #f0f0f0;
     border: 1.5px solid #bebebe;
-    border-radius: 40%;
+    border-radius: 10px;
     cursor: pointer;
+    transform: translateX(-50%)
 }
 
 #collapse-btn svg {
@@ -127,7 +128,7 @@
     display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 610px) {
    #search-row-2 {
     flex-direction: column !important;
 }
