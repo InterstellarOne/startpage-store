@@ -322,6 +322,7 @@ if (websiteLink) newJSONObject.websiteLink = websiteLink;
 if (safariLink) newJSONObject.safariLink = safariLink;
 if (typeof starCount === 'number') newJSONObject.stars = starCount;
 
+// Create file
 function createFile() {
     while (true) {
         const outputName = fileName + ".json";
