@@ -79,7 +79,7 @@ function createImagePath(extension) {
 }
 
 const screenshots = data["Cover screenshot"];
-const match = screenshots.match(/\((.*?)\)/);
+const match = screenshots.match(/\((https?:\/\/[^\s)]+)\)/);
 const screenshot = match[1];
 if (screenshots.includes("\n")) console.log("Multiple screenshots were uploaded so only the first one has been added.");
 const imageLocalFilePath = await downloadImage(screenshot);
