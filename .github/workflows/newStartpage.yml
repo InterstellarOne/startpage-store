@@ -39,7 +39,7 @@ jobs:
                 commit-message: "create new startpage entry"
                 committer: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
                 author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
-                branch: "add-startpage-${{ github.run_id }}"
+                branch: "add-startpage-${{github.event.issue.title}}-${{ github.run_id }}"
                 title: "New Startpage ${{github.event.issue.title}}"
                 body: "Closes #${{ github.event.issue.number }}"
                 add-paths: |
