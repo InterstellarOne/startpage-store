@@ -1,0 +1,22 @@
+{
+  "title": "Mist",
+  "description": "Mist keeps the things you reach for close—search, shortcuts, time and weather—without turning your browser into another busy dashboard. Choose a signature atmosphere or create your own from any PNG or JPG wallpaper with an automatically generated four-color palette.",
+  "image": {
+    "src": "screenshots/mist5886.png"
+  },
+  "tags": [
+    "Customizable",
+    "Bookmarks",
+    "Groups",
+    "Lightweight",
+    "Search",
+    "Bookmarks",
+    "Time",
+    "Themes"
+  ],
+  "dateAdded": 1789961137510,
+  "proprietary": true,
+  "dateUpdated": 1789257600000,
+  "chromeLink": "https://chromewebstore.google.com/detail/mist-%E2%80%94-minimal-new-tab/boffmmgbnbcgjkcllimodfgpeffoeflb",
+  "websiteLink": "https://www.mistnewtab.com/"
+}
