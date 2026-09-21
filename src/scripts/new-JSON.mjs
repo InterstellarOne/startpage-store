@@ -210,7 +210,7 @@ async function getChromeREST(url) {
 }                
 
 
-if (gitLink && gitLink.includes("github.com") || gitLink.includes("codeberg.org") || gitLink.includes("gitlab.com") ) {
+if (gitLink?.includes("github.com") || gitLink?.includes("codeberg.org") || gitLink?.includes("gitlab.com") ) {
     const url = new URL(gitLink);
     const urlPath = url.pathname.slice(1);
 
