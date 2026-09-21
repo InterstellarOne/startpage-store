@@ -6,14 +6,14 @@ import { Readable } from 'node:stream'
 
 const targetDir = "src/content/startpages";
 const imageDir = "public/screenshots"
-const data = JSON.parse(process.env.parsed_data);
+const parsedData = JSON.parse(process.env.parsed_data);
 const chromeStatsKey = process.env.CHROME_STATS_API_KEY;
 
-if (!data) console.error(`Data from issue ${process.env.issue_number} failed to parse`);
+if (!parsedData) console.error(`Data from issue ${process.env.issue_number} failed to parse`);
 
 // Title and Description
-const title = data["Name"];
-const description = Array.isArray(data["Description"]) ? data["Description"].join(", ") : data["Description"];
+const title = parsedData["Name"];
+const description = Array.isArray(parsedData["Description"]) ? parsedData["Description"].join(", ") : parsedData["Description"];
 
 // Tags
 const tags = [];
@@ -23,7 +23,7 @@ function format (tag) {
 }
 
 for (let i = 1; i < 9; i++) {
-    const tag = format(data[i]);
+    const tag = format(parsedData[i]);
 
     if (tag && tag != "No response") {
         tags.push(tag);
@@ -78,7 +78,7 @@ function createImagePath(extension) {
     }
 }
 
-const screenshots = data["Cover screenshot"];
+const screenshots = parsedData["Cover screenshot"];
 const match = screenshots.match(/\((https?:\/\/[^\s)]+)\)/);
 const screenshot = match[1];
 if (screenshots.includes("\n")) console.log("Multiple screenshots were uploaded so only the first one has been added.");
@@ -86,15 +86,15 @@ const imageLocalFilePath = await downloadImage(screenshot);
 const imageFilePath = path.relative(path.resolve('public'), imageLocalFilePath);
 
 // License 
-const proprietary = !data["License type"]["This startpage is open source"];
+const proprietary = !parsedData["License type"]["This startpage is open source"];
 
 // Links 
 let gitLink;
-if (data["Source (Github, Codeberg, or other)"].includes("https://")) {
-    if (data["Source (Github, Codeberg, or other)"].includes("https://github.com/") || 
-    data["Source (Github, Codeberg, or other)"].includes("https://codeberg.org/") || 
-    data["Source (Github, Codeberg, or other)"].includes("https://gitlab.com/")) {
-        gitLink = data["Source (Github, Codeberg, or other)"];
+if (parsedData["Source (Github, Codeberg, or other)"].includes("https://")) {
+    if (parsedData["Source (Github, Codeberg, or other)"].includes("https://github.com/") || 
+    parsedData["Source (Github, Codeberg, or other)"].includes("https://codeberg.org/") || 
+    parsedData["Source (Github, Codeberg, or other)"].includes("https://gitlab.com/")) {
+        gitLink = parsedData["Source (Github, Codeberg, or other)"];
         if (gitLink.endsWith(".git")) gitLink.slice(0, -4);
     } else {
         console.log("Unknown source website. Fields may need to be populated manually, or this website may be added to the API script.");
@@ -104,31 +104,31 @@ if (data["Source (Github, Codeberg, or other)"].includes("https://")) {
 }
 
 let websiteLink;
-if (data["Standalone website"].includes("https://")) {
-    websiteLink = data["Standalone website"];
+if (parsedData["Standalone website"].includes("https://")) {
+    websiteLink = parsedData["Standalone website"];
 } else {
     console.log("Website link invalid or not submitted.");
 }
 
 let firefoxLink;
-if (data["Firefox Add-ons"].includes("https://addons.mozilla.org/")) {
-    const url = new URL(data["Firefox Add-ons"]);
+if (parsedData["Firefox Add-ons"].includes("https://addons.mozilla.org/")) {
+    const url = new URL(parsedData["Firefox Add-ons"]);
     firefoxLink = url.origin + url.pathname;
 } else {
     console.log("Firefox link invalid or not submitted.");
 }
 
 let chromeLink;
-if (data["Chrome Web Store"].includes("https://chromewebstore.google.com/detail/")) {
-    const url = new URL(data["Chrome Web Store"]);
+if (parsedData["Chrome Web Store"].includes("https://chromewebstore.google.com/detail/")) {
+    const url = new URL(parsedData["Chrome Web Store"]);
     chromeLink = url.origin + url.pathname;
 } else {
     console.log("Chrome link invalid or not submitted.");
 }
 
 let safariLink;
-if (data["App Store (Safari)"].includes("https://apps.apple.com/")) {
-    const url = new URL(data["App Store (Safari)"]);
+if (parsedData["App Store (Safari)"].includes("https://apps.apple.com/")) {
+    const url = new URL(parsedData["App Store (Safari)"]);
     safariLink = url.origin + url.pathname;    
 } else {
     console.log("Safari link invalid or not submitted.");
@@ -209,15 +209,14 @@ async function getChromeREST(url) {
     }
 }                
 
+let urlPart = "";
+let endpoint = "";
+let data = [];
+
 
 if (gitLink?.includes("github.com") || gitLink?.includes("codeberg.org") || gitLink?.includes("gitlab.com") ) {
     const url = new URL(gitLink);
     const urlPath = url.pathname.slice(1);
-
-    let urlPart = "";
-    let endpoint = "";
-    let data = [];
-
 
     switch(url.hostname) {
         case "github.com" :
