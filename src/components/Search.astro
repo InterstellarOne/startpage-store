@@ -181,4 +181,10 @@ const uniqueTags = Array.from(new Set(tags));
   selectSearch.value = "";
   selectSort.value = "latest";
   checkbox.checked = true;
+
+  if (navigator.maxTouchPoints > 1) {
+    searchRow2.style.display = "none";
+    collapseIcon.style.display = "none";
+    expandIcon.style.display = "inline";
+  }
 </script>
