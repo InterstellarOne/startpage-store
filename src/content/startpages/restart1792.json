@@ -1,0 +1,25 @@
+{
+  "title": "re-start",
+  "description": "a tui-style browser startpage, built with svelte.",
+  "image": {
+    "src": "screenshots/restart1792.png"
+  },
+  "tags": [
+    "Tasks",
+    "Weather",
+    "Bookmarks",
+    "Clock",
+    "Themes",
+    "Custom CSS",
+    "Lightweight",
+    "Stats"
+  ],
+  "dateAdded": 1789962210209,
+  "proprietary": false,
+  "dateUpdated": 1788256356000,
+  "gitLink": "https://github.com/refact0r/re-start",
+  "firefoxLink": "https://addons.mozilla.org/en-US/firefox/addon/d004c62a8aed4f3b8ddd/",
+  "chromeLink": "https://chromewebstore.google.com/detail/re-start/fdodcmjeojbmcgmhcgcelffcekhicnop",
+  "websiteLink": "https://refact0r.github.io/re-start/",
+  "stars": 447
+}
